@@ -64,7 +64,7 @@
         "overlaySprite": "infantry-line",
         "changeAnimations": {
           "square": "line-square",
-          "line": "line-mass",
+          "mass": "line-mass",
           "column": "line-column"
         }
       },
@@ -242,7 +242,7 @@
         "overlaySprite": "guards-line",
         "changeAnimations": {
           "square": "line-square",
-          "line": "line-mass",
+          "mass": "line-mass",
           "column": "line-column"
         }
       },
@@ -425,7 +425,7 @@
         "overlaySprite": "chasseurs-line",
         "changeAnimations": {
           "square": "line-square",
-          "line": "line-mass",
+          "mass": "line-mass",
           "column": "line-column"
         }
       },
@@ -795,7 +795,7 @@
         "overlaySprite": "grenadiers-line",
         "changeAnimations": {
           "square": "line-square",
-          "line": "line-mass",
+          "mass": "line-mass",
           "column": "line-column"
         }
       },
