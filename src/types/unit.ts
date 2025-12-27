@@ -158,10 +158,17 @@ interface BaseUnitTemplate {
   stamina?: number;
   supply?: number;
   /**
-   * Supply consumption per turn for this unit.
-   * Defaults to 0 if not specified.
+   * Supply consumption when unit is idle (not moving or fighting).
    */
-  supplyConsumption?: number;
+  supplyConsumptionIdle?: number;
+  /**
+   * Supply consumption when unit is moving.
+   */
+  supplyConsumptionMoving?: number;
+  /**
+   * Supply consumption when unit is in combat.
+   */
+  supplyConsumptionCombating?: number;
   /**
    * Manpower cost per supply point provided to this unit.
    * If not set, uses the global supplyManpowerCost from SupplyLinesRule.
@@ -281,11 +288,19 @@ export interface IUnit {
   formationChangeTicksRemaining: number;
 
   supply: number | null;
+
   /**
-   * Supply consumption per turn for this unit.
-   * Defaults to 0 if not specified.
+   * Supply consumption when unit is idle (not moving or fighting).
    */
-  supplyConsumption?: number;
+  supplyConsumptionIdle?: number;
+  /**
+   * Supply consumption when unit is moving.
+   */
+  supplyConsumptionMoving?: number;
+  /**
+   * Supply consumption when unit is in combat.
+   */
+  supplyConsumptionCombating?: number;
 
   getMaxRange: () => number;
   isRouting: () => boolean;
