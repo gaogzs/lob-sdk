@@ -184,6 +184,8 @@ export type GameTriggerCondition =
 export enum GameTriggerActionType {
   /** Action to add units to the game. */
   AddUnit = "addUnit",
+  /** Action to remove units from the game. */
+  RemoveUnit = "removeUnit",
   /** Action to add new triggers to the game. */
   AddTrigger = "addTrigger",
   /** Action to show a message to players. */
@@ -210,6 +212,16 @@ export interface ActionAddUnit {
   type: GameTriggerActionType.AddUnit;
   /** Array of unit DTOs to add. */
   value: UnitDtoPartialId[];
+}
+
+/**
+ * Action to remove units from the game.
+ */
+export interface ActionRemoveUnit {
+  /** Action type is RemoveUnit. */
+  type: GameTriggerActionType.RemoveUnit;
+  /** Array of unit names to remove. */
+  value: string[];
 }
 
 /**
@@ -324,8 +336,8 @@ export interface ActionSpawnNeutralObjectives {
  * to avoid conflicts with dynamically created units.
  */
 export interface TriggerOrderSpec {
-  /** Order type. */
-  type: OrderType;
+  /** Order type. Use -1 to remove the unit's current order. */
+  type: OrderType | -1;
 
   /** Name of the unit that will execute the order. */
   unitName: string;
@@ -358,6 +370,7 @@ export interface ActionOrderUnit {
  */
 export type GameTriggerAction =
   | ActionAddUnit
+  | ActionRemoveUnit
   | ActionAddTrigger
   | ActionShowMessage
   | ActionDefeatPlayer
@@ -391,7 +404,7 @@ export interface GameTrigger {
   conditionLogic?: GameTriggerConditionLogic;
   /** Array of actions to execute when the trigger fires. */
   actions: GameTriggerAction[];
-  /** Whether the trigger fires only once. If false, it can fire multiple times. */
+  /** Whether the trigger fires only once. If false, it can fire multiple times. Default is true. */
   once?: boolean;
 }
 
