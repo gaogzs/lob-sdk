@@ -286,14 +286,16 @@ export interface IUnit {
    * than 1 turn.
    */
   formationChangeTicksRemaining: number;
-
+  /**
+   * Used to determine if the unit is in melee.
+   */
+  inMelee: boolean;
   supply: number | null;
 
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;
   isMoving: () => boolean;
-  get inMelee(): boolean;
 }
 
 /**
