@@ -1,4 +1,11 @@
-import { AnyOrder, IServerGame, IUnit, OrderPathPoint, OrderType, UnitCategoryId,  } from "@lob-sdk/types"
+import {
+  AnyOrder,
+  IServerGame,
+  IUnit,
+  OrderPathPoint,
+  OrderType,
+  UnitCategoryId,
+} from "@lob-sdk/types";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { UnitGroup } from "./unit-group";
@@ -23,8 +30,8 @@ export class BotWW2 implements IBot {
   private static _config: BotConfig = {
     categoryGroups: {
       infantry: "Infantry",
-      motorized: "Cavalry",
-      armored: "Cavalry",
+      motorized: "Infantry",
+      armored: "Infantry",
     },
     maxGroupSize: {
       Infantry: 4,
@@ -36,18 +43,6 @@ export class BotWW2 implements IBot {
         preferFireAndAdvance: true,
         chargeThreshold: 200,
         groupCohesion: 3,
-      },
-      Cavalry: {
-        behavior: "direct",
-        preferRun: true,
-        avoidArtillery: false,
-        groupCohesion: 3,
-      },
-      Artillery: {
-        behavior: "offensive",
-        maintainDistance: true,
-        minDistanceFromEnemies: 6,
-        groupCohesion: 2,
       },
     },
     thresholds: {
