@@ -651,7 +651,7 @@ export class GameDataManager {
   /**
    * Get all available eras
    */
-  public getAvailableEras(): GameEra[] {
+  static getAvailableEras(): GameEra[] {
     return ["napoleonic", "ww2"];
   }
 
