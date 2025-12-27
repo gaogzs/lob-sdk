@@ -289,22 +289,11 @@ export interface IUnit {
 
   supply: number | null;
 
-  /**
-   * Supply consumption when unit is idle (not moving or fighting).
-   */
-  supplyConsumptionIdle?: number;
-  /**
-   * Supply consumption when unit is moving.
-   */
-  supplyConsumptionMoving?: number;
-  /**
-   * Supply consumption when unit is in combat.
-   */
-  supplyConsumptionCombating?: number;
-
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;
+  isMoving: () => boolean;
+  get inMelee(): boolean;
 }
 
 /**
