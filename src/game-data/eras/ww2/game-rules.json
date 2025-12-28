@@ -2,8 +2,6 @@
   "supplyLines": {
     "roadTerrainTypes": [3, 7, 15],
     "influenceRadius": 3,
-    "upperModifierLimit": 0.8,
-    "lowerModifierLimit": 0.2,
     "supplyHubRadius": 8,
     "supplyHubRadiusWithInfluence": 16,
     "defaultLogistics": 500,

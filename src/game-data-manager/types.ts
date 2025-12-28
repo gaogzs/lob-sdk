@@ -407,10 +407,6 @@ export interface SupplyLinesRule {
   roadTerrainTypes?: number[];
   /** Radius of influence around units for supply line calculations (in tiles) */
   influenceRadius: number;
-  /** Upper limit for supply bar visibility threshold (0-1). When unit.supply <= template.supply * upperModifierLimit, the bar is shown */
-  upperModifierLimit: number;
-  /** Lower limit for supply bar minimum supply (0-1). The bar scales from lowerModifierLimit to upperModifierLimit */
-  lowerModifierLimit: number;
   /** Radius around supply hubs (small objectives) where units can receive supply (in tiles) */
   supplyHubRadius: number;
   /** Maximum radius around supply hubs where units can receive supply when under friendly influence (in tiles) */
