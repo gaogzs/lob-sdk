@@ -193,6 +193,7 @@
     "color": "#c9be98",
     "staminaCostModifier": -0.5,
     "prioritizeMovement": true,
+    "canPlaceObjectives": true,
     "movementModifier": {
       "infantry": 0.3,
       "skirmishInfantry": 0.3,
@@ -210,13 +211,15 @@
   "railway": {
     "color": "#8b7355",
     "staminaCostModifier": -0.5,
-    "supplyRoute": true
+    "supplyRoute": true,
+    "canPlaceObjectives": true
   },
 
   "railwayRoad": {
     "color": "#a68b6b",
     "staminaCostModifier": -0.5,
     "prioritizeMovement": true,
+    "canPlaceObjectives": true,
     "supplyRoute": true,
     "movementModifier": {
       "infantry": 0.3,

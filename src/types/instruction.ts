@@ -357,6 +357,17 @@ export interface InstructionLake extends BaseInstruction {
   position: PositionData;
 }
 
+interface TerrainFilter {
+  /** Terrain type to filter. */
+  terrains?: TerrainType[];
+  /** Search radius. Default is 0. */
+  searchRadius?: number;
+  /** Minimum amount of terrains to filter. Default is 1. */
+  minAmount?: number;
+  /** Heights that this objective layer can be placed on. */
+  heights?: [{ min: number; max: number }];
+}
+
 /**
  * Instruction to place an objective layer on the map.
  */
@@ -369,10 +380,8 @@ export interface InstructionObjectiveLayer extends BaseInstruction {
   objectiveType: ObjectiveType;
   /** Optional - Number between 0 and 100 indicating the chance of this objective layer being placed. */
   chance?: number;
-  /** Optional - Terrains that this objective layer can be placed on. */
-  terrains?: TerrainType[];
-  /** Optional - Heights that this objective layer can be placed on. */
-  heights?: [{ min: number; max: number }];
+  /** Optional - Terrain filter. */
+  terrainFilter?: TerrainFilter;
   /** Optional - Minimum distance between this objective layer and the nearest objective. */
   minDistance?: number;
 }

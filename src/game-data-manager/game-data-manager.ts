@@ -309,9 +309,9 @@ export class GameDataManager {
         this.gameRules = ww2GameRules as GameRules;
         this._formationManager.load(ww2Formations as FormationTemplate[]);
         this.scenarios = {
-          "battle-of-moscow": ww2BattleOfMoscow as GameScenario,
           fields: ww2Fields as GameScenario,
           "battle-of-france": ww2France as GameScenario,
+          "battle-of-moscow": ww2BattleOfMoscow as GameScenario,
         };
 
         break;
