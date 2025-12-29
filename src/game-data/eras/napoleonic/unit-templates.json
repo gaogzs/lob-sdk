@@ -581,7 +581,18 @@
       {
         "id": "mass",
         "baseSprite": "militia",
-        "overlaySprite": "militia"
+        "overlaySprite": "militia",
+        "changeAnimations": {
+          "line": "mass-line"
+        }
+      },
+      {
+        "id": "line",
+        "baseSprite": "militia-line",
+        "overlaySprite": "militia-line",
+        "changeAnimations": {
+          "mass": "line-mass"
+        }
       }
     ],
     "pushStrength": 4,
