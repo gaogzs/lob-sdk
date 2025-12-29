@@ -10,5 +10,11 @@
     "name": "zhukov",
     "tier": 1,
     "premiumPrice": 100
+  },
+  {
+    "id": 3,
+    "name": "rommel",
+    "tier": 1,
+    "premiumPrice": 100
   }
 ]

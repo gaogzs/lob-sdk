@@ -9,7 +9,8 @@
       "default": {
         "overlay": "german-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
       "default": {
         "overlay": "french-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
       "default": {
         "overlay": "british-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
       "default": {
         "overlay": "american-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
       "default": {
         "overlay": "soviet-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
       "default": {
         "overlay": "italian-infantry"
       }
-    }
+    },
+    "locked": true
   },
   {
     "id": 7,
@@ -81,6 +87,7 @@
       "default": {
         "overlay": "japanese-infantry"
       }
-    }
+    },
+    "locked": true
   }
 ]
