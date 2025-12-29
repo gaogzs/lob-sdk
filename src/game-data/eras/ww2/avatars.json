@@ -16,5 +16,11 @@
     "name": "rommel",
     "tier": 1,
     "premiumPrice": 100
+  },
+  {
+    "id": 4,
+    "name": "yamamoto",
+    "tier": 1,
+    "premiumPrice": 100
   }
 ]
