@@ -4,5 +4,11 @@
     "name": "soviet-machine-gunner",
     "tier": 1,
     "premiumPrice": 100
+  },
+  {
+    "id": 2,
+    "name": "zhukov",
+    "tier": 1,
+    "premiumPrice": 100
   }
 ]
