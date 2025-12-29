@@ -583,7 +583,9 @@
         "baseSprite": "militia",
         "overlaySprite": "militia",
         "changeAnimations": {
-          "line": "mass-line"
+          "line": "mass-line",
+          "column": "mass-column",
+          "square": "mass-square"
         }
       },
       {
@@ -591,7 +593,29 @@
         "baseSprite": "militia-line",
         "overlaySprite": "militia-line",
         "changeAnimations": {
-          "mass": "line-mass"
+          "mass": "line-mass",
+          "column": "line-column",
+          "square": "line-square"
+        }
+      },
+      {
+        "id": "column",
+        "baseSprite": "militia-column",
+        "overlaySprite": "militia-column",
+        "changeAnimations": {
+          "mass": "column-mass",
+          "line": "column-line",
+          "square": "column-square"
+        }
+      },
+      {
+        "id": "square",
+        "baseSprite": "militia-square",
+        "overlaySprite": "militia-square",
+        "changeAnimations": {
+          "mass": "square-mass",
+          "line": "square-line",
+          "column": "square-column"
         }
       }
     ],
