@@ -9,18 +9,18 @@
     "id": 2,
     "name": "zhukov",
     "tier": 1,
-    "premiumPrice": 100
+    "premiumPrice": 200
   },
   {
     "id": 3,
     "name": "rommel",
     "tier": 1,
-    "premiumPrice": 100
+    "premiumPrice": 200
   },
   {
     "id": 4,
     "name": "yamamoto",
     "tier": 1,
-    "premiumPrice": 100
+    "premiumPrice": 200
   }
 ]
