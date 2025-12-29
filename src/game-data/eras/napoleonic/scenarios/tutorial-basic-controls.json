@@ -299,15 +299,17 @@
     {
       "event": "onTurnStart",
       "conditions": [],
+      "conditionLogic": "AND",
       "actions": [
         {
-          "type": "setVar",
+          "type": "showMessage",
           "value": {
-            "name": "trigger_executed",
-            "value": 0
+            "title": "trigger.1.title",
+            "message": "trigger.1.message"
           }
         }
-      ]
+      ],
+      "once": true
     },
     {
       "event": "onTurnEnd",
@@ -322,13 +324,6 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "setVar",
-          "value": {
             "name": "1st_move",
             "value": 1
           }
@@ -342,8 +337,31 @@
         {
           "type": "isVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "tutorial_completed",
             "value": 0
+          }
+        }
+      ],
+      "conditionLogic": "AND",
+      "actions": [
+        {
+          "type": "endGame",
+          "value": {
+            "reason": "victory"
+          }
+        }
+      ],
+      "once": true
+    },
+
+    {
+      "event": "onTurnEnd",
+      "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_7_shown",
+            "value": 1
           }
         }
       ],
@@ -352,15 +370,8 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.1.title",
-            "message": "trigger.1.message"
+            "name": "tutorial_completed",
+            "value": 0
           }
         }
       ],
@@ -373,215 +384,13 @@
         {
           "type": "isVar",
           "value": {
-            "name": "1st_move",
+            "name": "message_6_shown",
             "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.2.title",
-            "message": "trigger.2.message"
-          }
-        }
-      ],
-      "once": true
-    },
-
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "1st_move",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.3.title",
-            "message": "trigger.3.message"
-          }
-        }
-      ],
-      "once": true
-    },
-
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "1st_move",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
           }
         }
       ],
       "conditionLogic": "AND",
       "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.4.title",
-            "message": "trigger.4.message"
-          }
-        }
-      ],
-      "once": true
-    },
-
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "1st_move",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.5.title",
-            "message": "trigger.5.message"
-          }
-        }
-      ],
-      "once": true
-    },
-
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "1st_move",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
-        {
-          "type": "showMessage",
-          "value": {
-            "title": "trigger.6.title",
-            "message": "trigger.6.message"
-          }
-        }
-      ],
-      "once": true
-    },
-
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "1st_move",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
         {
           "type": "showMessage",
           "value": {
@@ -592,7 +401,130 @@
         {
           "type": "setVar",
           "value": {
-            "name": "tutorial_completed",
+            "name": "message_7_shown",
+            "value": 1
+          }
+        }
+      ],
+      "once": true
+    },
+
+    {
+      "event": "onTurnStart",
+      "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_5_shown",
+            "value": 1
+          }
+        }
+      ],
+      "conditionLogic": "AND",
+      "actions": [
+        {
+          "type": "showMessage",
+          "value": {
+            "title": "trigger.6.title",
+            "message": "trigger.6.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_6_shown",
+            "value": 1
+          }
+        }
+      ],
+      "once": true
+    },
+
+    {
+      "event": "onTurnStart",
+      "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_4_shown",
+            "value": 1
+          }
+        }
+      ],
+      "conditionLogic": "AND",
+      "actions": [
+        {
+          "type": "showMessage",
+          "value": {
+            "title": "trigger.5.title",
+            "message": "trigger.5.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_5_shown",
+            "value": 1
+          }
+        }
+      ],
+      "once": true
+    },
+
+    {
+      "event": "onTurnStart",
+      "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_3_shown",
+            "value": 1
+          }
+        }
+      ],
+      "conditionLogic": "AND",
+      "actions": [
+        {
+          "type": "showMessage",
+          "value": {
+            "title": "trigger.4.title",
+            "message": "trigger.4.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_4_shown",
+            "value": 1
+          }
+        }
+      ],
+      "once": true
+    },
+
+    {
+      "event": "onTurnStart",
+      "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_2_shown",
+            "value": 1
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "showMessage",
+          "value": {
+            "title": "trigger.3.title",
+            "message": "trigger.3.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_3_shown",
             "value": 1
           }
         }
@@ -606,17 +538,24 @@
         {
           "type": "isVar",
           "value": {
-            "name": "tutorial_completed",
+            "name": "1st_move",
             "value": 1
           }
         }
       ],
-      "conditionLogic": "AND",
       "actions": [
         {
-          "type": "endGame",
+          "type": "showMessage",
           "value": {
-            "reason": "victory"
+            "title": "trigger.2.title",
+            "message": "trigger.2.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_2_shown",
+            "value": 1
           }
         }
       ],
