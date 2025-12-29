@@ -612,14 +612,14 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 4.6,
-        "endMod": 4.2,
+        "startMod": 4.75,
+        "endMod": 4.35,
         "name": "close"
       },
       {
         "start": 69,
         "end": 110,
-        "startMod": 3.6,
+        "startMod": 3.75,
         "endMod": 2.6,
         "name": "long"
       }
@@ -644,15 +644,15 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 2.75,
-        "endMod": 2.5,
+        "startMod": 2.8,
+        "endMod": 2.6,
         "name": "close"
       },
       {
         "start": 69,
         "end": 145,
-        "startMod": 1.6,
-        "endMod": 1,
+        "startMod": 1.75,
+        "endMod": 1.2,
         "name": "long"
       }
     ],
@@ -676,15 +676,15 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 3.75,
-        "endMod": 3.5,
+        "startMod": 3.8,
+        "endMod": 3.6,
         "name": "close"
       },
       {
         "start": 69,
         "end": 105,
-        "startMod": 2.7,
-        "endMod": 2.2,
+        "startMod": 2.75,
+        "endMod": 2.35,
         "name": "long"
       }
     ],
@@ -708,15 +708,15 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 2.5,
-        "endMod": 2.25,
+        "startMod": 2.6,
+        "endMod": 2.35,
         "name": "close"
       },
       {
         "start": 69,
         "end": 135,
-        "startMod": 1.5,
-        "endMod": 0.9,
+        "startMod": 1.6,
+        "endMod": 1,
         "name": "long"
       }
     ],
@@ -740,15 +740,15 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 2,
-        "endMod": 1.75,
+        "startMod": 2.25,
+        "endMod": 2,
         "name": "close"
       },
       {
         "start": 69,
         "end": 120,
-        "startMod": 1.2,
-        "endMod": 0.8,
+        "startMod": 1.4,
+        "endMod": 1,
         "name": "long"
       }
     ],
@@ -772,15 +772,15 @@
       {
         "start": 0,
         "end": 69,
-        "startMod": 1.6,
-        "endMod": 1.35,
+        "startMod": 1.75,
+        "endMod": 1.5,
         "name": "close"
       },
       {
         "start": 69,
         "end": 110,
         "startMod": 1,
-        "endMod": 0.6,
+        "endMod": 0.75,
         "name": "long"
       }
     ],
@@ -805,7 +805,7 @@
         "start": 0,
         "end": 69,
         "startMod": 9,
-        "endMod": 8.5,
+        "endMod": 8.75,
         "name": "close"
       }
     ],
@@ -839,7 +839,7 @@
     "id": 27,
     "name": "rocket",
     "ranged": true,
-    "orgDamageRatio": 450,
+    "orgDamageRatio": 600,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
     "projectileWidth": 24,
@@ -852,18 +852,18 @@
       {
         "start": 0,
         "end": 80,
-        "startMod": 1.5,
-        "endMod": 1.5
+        "startMod": 1.75,
+        "endMod": 1.75
       },
       {
         "start": 80,
-        "end": 160,
-        "startMod": 1.5,
-        "endMod": 0.35,
+        "end": 150,
+        "startMod": 1.75,
+        "endMod": 0.75,
         "name": "close"
       }
     ],
-    "arcHeight": 0.3,
+    "arcHeight": 0.75,
     "cannotUseAfterRun": true,
     "projectilePenetration": 0.5,
     "areaOfEffect": {
@@ -871,7 +871,7 @@
       "ranges": [
         {
           "start": 18,
-          "end": 175,
+          "end": 150,
           "startRadius": 18,
           "endRadius": 32
         }
@@ -882,7 +882,7 @@
     "shotSound": "rocket-volley",
     "shotAnim": "rocketVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 280,
+    "ammoCost": 320,
     "extendRange": false
   },
   {
@@ -890,7 +890,7 @@
     "name": "rocket-long",
     "ranged": true,
     "orgDamageRatio": 360,
-    "reorgDebuff": 0.8,
+    "reorgDebuff": 0.9,
     "attackEffectDuration": 4,
     "projectileWidth": 24,
     "diminishByTargetOrg": {
@@ -900,7 +900,7 @@
     },
     "ranges": [
       {
-        "start": 160,
+        "start": 150,
         "end": 450,
         "startMod": 0.35,
         "endMod": -0.9,
@@ -914,7 +914,7 @@
       "type": "circular",
       "ranges": [
         {
-          "start": 160,
+          "start": 150,
           "end": 450,
           "startRadius": 32,
           "endRadius": 58
@@ -926,7 +926,7 @@
     "shotSound": "rocket-volley",
     "shotAnim": "rocketVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 180,
+    "ammoCost": 160,
     "extendRange": false
   }
 ]
