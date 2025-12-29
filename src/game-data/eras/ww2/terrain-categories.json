@@ -1,7 +1,6 @@
 {
   "land": {
     "color": "#8a9b52",
-    "canPlaceObjectives": true,
     "defenseModifier": {}
   },
 
@@ -10,7 +9,6 @@
     "heightOffset": -0.7,
     "hitboxHeight": 0.4,
     "staminaCostModifier": 0.3,
-    "canPlaceObjectives": true,
     "defenseModifier": {},
     "movementModifier": {
       "infantry": -0.2,
@@ -188,7 +186,6 @@
     "color": "#c9be98",
     "staminaCostModifier": -0.5,
     "prioritizeMovement": true,
-    "canPlaceObjectives": true,
     "movementModifier": {
       "infantry": 0.3,
       "skirmishInfantry": 0.3,
