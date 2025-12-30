@@ -22,5 +22,11 @@
     "name": "yamamoto",
     "tier": 1,
     "premiumPrice": 200
+  },
+  {
+    "id": 5,
+    "name": "patton",
+    "tier": 1,
+    "premiumPrice": 200
   }
 ]
