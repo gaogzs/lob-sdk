@@ -11,6 +11,7 @@ import {
   TerrainCategoryConfig,
   TerrainType,
   TerrainConfig,
+  Size,
 } from "@lob-sdk/types";
 import {
   GameConstants,
@@ -22,6 +23,7 @@ import {
   UnitSkin,
   ObjectiveSkin,
   Avatar,
+  MapSizeTemplate,
 } from "./types";
 
 // Import all era-specific data synchronously
@@ -38,6 +40,7 @@ import napoleonicUnitCategories from "@lob-sdk/game-data/eras/napoleonic/unit-ca
 import napoleonicUnitSkinsData from "@lob-sdk/game-data/eras/napoleonic/unit-skins.json";
 import napoleonicGameRules from "@lob-sdk/game-data/eras/napoleonic/game-rules.json";
 import napoleonicFormations from "@lob-sdk/game-data/eras/napoleonic/formations.json";
+import napoleonicMapSizes from "@lob-sdk/game-data/eras/napoleonic/map-sizes.json";
 
 // Import napoleonic scenarios
 import napoleonicWaterloo from "@lob-sdk/game-data/eras/napoleonic/scenarios/waterloo.json";
@@ -90,6 +93,7 @@ import ww2UnitCategories from "@lob-sdk/game-data/eras/ww2/unit-categories.json"
 import ww2UnitSkins from "@lob-sdk/game-data/eras/ww2/unit-skins.json";
 import ww2GameRules from "@lob-sdk/game-data/eras/ww2/game-rules.json";
 import ww2Formations from "@lob-sdk/game-data/eras/ww2/formations.json";
+import ww2MapSizes from "@lob-sdk/game-data/eras/ww2/map-sizes.json";
 
 // Import ww2 scenarios
 import ww2BattleOfMoscow from "@lob-sdk/game-data/eras/ww2/scenarios/battle-of-moscow.json";
@@ -168,6 +172,9 @@ export class GameDataManager {
   // Scenarios
   private scenarios: Record<ScenarioName, GameScenario> = {};
 
+  // Map sizes
+  private mapSizes: Record<Size, MapSizeTemplate> | null = null;
+
   private _unitCategoryAllowedOrders: Map<UnitCategoryId, Set<OrderType>> =
     new Map();
 
@@ -244,6 +251,7 @@ export class GameDataManager {
         this._formationManager.load(
           napoleonicFormations as FormationTemplate[]
         );
+        this.mapSizes = napoleonicMapSizes as Record<Size, MapSizeTemplate>;
         this.scenarios = {
           plains: napoleonicPlains as GameScenario,
           hills: napoleonicHills as GameScenario,
@@ -308,6 +316,7 @@ export class GameDataManager {
         this.unitSkins = ww2UnitSkins as unknown as UnitSkin[];
         this.gameRules = ww2GameRules as GameRules;
         this._formationManager.load(ww2Formations as FormationTemplate[]);
+        this.mapSizes = ww2MapSizes as Record<Size, MapSizeTemplate>;
         this.scenarios = {
           fields: ww2Fields as GameScenario,
           "battle-of-france": ww2France as GameScenario,
@@ -395,6 +404,17 @@ export class GameDataManager {
    */
   public getGameRules(): GameRules {
     return this.gameRules as GameRules;
+  }
+
+  /**
+   * Gets the map sizes for the current era.
+   * @returns The map sizes data.
+   */
+  public getMapSizes(): Record<Size, MapSizeTemplate> {
+    if (!this.mapSizes) {
+      throw new Error(`Map sizes not loaded for era: ${this.era}`);
+    }
+    return this.mapSizes;
   }
 
   /**

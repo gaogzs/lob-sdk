@@ -8,6 +8,7 @@ import {
   ObjectiveDto,
   ObjectiveType,
 } from "@lob-sdk/types";
+import { GameEra } from "@lob-sdk/game-data-manager";
 
 /**
  * Properties for generating a random map procedurally.
@@ -25,6 +26,8 @@ export interface GenerateRandomMapProps {
   size?: MapSize;
   /** Size of each tile in pixels/units. */
   tileSize: number;
+  /** The game era (e.g., "napoleonic", "ww2"). */
+  era: GameEra;
 }
 
 /**

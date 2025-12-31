@@ -4,39 +4,43 @@ import {
   DynamicBattleType,
   Size,
 } from "@lob-sdk/types";
-import mapSizesJson from "@lob-sdk/game-data/shared/map-sizes.json";
+import { GameEra, GameDataManager } from "@lob-sdk/game-data-manager";
 
-const mapSizes = mapSizesJson as Record<
-  Size,
-  {
-    map: MapSize;
-    deployment: { width: number; height: number; zoneSeparation: number };
-  }
->;
-
-export const getMapSize = (size: Size): MapSize => {
-  return mapSizes[size].map;
+export const getMapSize = (size: Size, era: GameEra, tileSize: number): MapSize => {
+  const mapSizes = GameDataManager.get(era).getMapSizes();
+  return {
+    width: mapSizes[size].map.tilesX * tileSize,
+    height: mapSizes[size].map.tilesY * tileSize,
+  };
 };
 
 export const getDeploymentZoneBySize = (
   size: Size,
   mapWidth: number,
   mapHeight: number,
-  team: number
+  team: number,
+  era: GameEra,
+  tileSize: number
 ): TeamDeploymentZone => {
+  const mapSizes = GameDataManager.get(era).getMapSizes();
   let zoneSettings = mapSizes[size].deployment;
 
+  // Convert tiles to pixels
+  const zoneWidth = zoneSettings.tilesX * tileSize;
+  const zoneHeight = zoneSettings.tilesY * tileSize;
+  const zoneSeparation = zoneSettings.zoneSeparation * tileSize;
+
   // Calculate centered X coordinate
-  const x = (mapWidth - zoneSettings.width) / 2;
+  const x = (mapWidth - zoneWidth) / 2;
 
   // Calculate Y coordinate, centering zones vertically with zoneSeparation
-  const totalHeight = 2 * zoneSettings.height + zoneSettings.zoneSeparation;
+  const totalHeight = 2 * zoneHeight + zoneSeparation;
   const y =
     team === 1
-      ? (mapHeight + totalHeight) / 2 - zoneSettings.height
+      ? (mapHeight + totalHeight) / 2 - zoneHeight
       : (mapHeight - totalHeight) / 2;
 
-  return { team, width: zoneSettings.width, height: zoneSettings.height, x, y };
+  return { team, width: zoneWidth, height: zoneHeight, x, y };
 };
 
 export const getBattleSizeByMode = (

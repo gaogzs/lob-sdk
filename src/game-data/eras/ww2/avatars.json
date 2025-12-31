@@ -28,5 +28,17 @@
     "name": "patton",
     "tier": 1,
     "premiumPrice": 200
+  },
+  {
+    "id": 6,
+    "name": "montgomery",
+    "tier": 1,
+    "premiumPrice": 200
+  },
+  {
+    "id": 7,
+    "name": "de-gaulle",
+    "tier": 1,
+    "premiumPrice": 200
   }
 ]

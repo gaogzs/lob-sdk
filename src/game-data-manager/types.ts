@@ -570,3 +570,8 @@ export interface UnitSkin {
   locked?: boolean;
   discount?: number;
 }
+
+export interface MapSizeTemplate {
+  map: { tilesX: number; tilesY: number };
+  deployment: { tilesX: number; tilesY: number; zoneSeparation: number };
+}

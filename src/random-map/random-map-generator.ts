@@ -32,12 +32,13 @@ export class RandomMapGenerator {
     seed,
     size,
     tileSize,
+    era,
   }: GenerateRandomMapProps): GenerateRandomMapResult {
     const battleSize = getBattleSizeByMode(dynamicBattleType, maxPlayers);
-    const { width, height } = size ?? getMapSize(battleSize);
+    const { width, height } = size ?? getMapSize(battleSize, era, tileSize);
     const deploymentZones: [TeamDeploymentZone, TeamDeploymentZone] = [
-      getDeploymentZoneBySize(battleSize, width, height, 1),
-      getDeploymentZoneBySize(battleSize, width, height, 2),
+      getDeploymentZoneBySize(battleSize, width, height, 1, era, tileSize),
+      getDeploymentZoneBySize(battleSize, width, height, 2, era, tileSize),
     ];
     const objectives: ObjectiveDto<false>[] = [];
 

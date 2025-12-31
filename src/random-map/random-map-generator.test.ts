@@ -78,6 +78,7 @@ describe("RandomMapGenerator", () => {
                   dynamicBattleType: battleType,
                   maxPlayers,
                   tileSize: TILE_SIZE,
+                  era: "napoleonic",
                 });
 
                 // Verify the result has the expected structure
@@ -130,6 +131,7 @@ describe("RandomMapGenerator", () => {
           maxPlayers: 2,
           seed: testSeed,
           tileSize: TILE_SIZE,
+          era: "napoleonic",
         });
 
         const result2 = mapGenerator.generate({
@@ -138,6 +140,7 @@ describe("RandomMapGenerator", () => {
           maxPlayers: 2,
           seed: testSeed,
           tileSize: TILE_SIZE,
+          era: "napoleonic",
         });
 
         // Results should be identical with the same seed
@@ -167,6 +170,7 @@ describe("RandomMapGenerator", () => {
             maxPlayers: 2,
             size: customSize,
             tileSize: TILE_SIZE,
+            era: "napoleonic",
           });
 
           // Verify the custom size was used (adjusted to tile size multiples)
@@ -193,6 +197,7 @@ describe("RandomMapGenerator", () => {
             dynamicBattleType: DynamicBattleType.Combat,
             maxPlayers: 2,
             tileSize: TILE_SIZE,
+            era: "napoleonic",
           });
 
           // Verify terrain array is properly populated
@@ -261,6 +266,7 @@ describe("RandomMapGenerator", () => {
         maxPlayers: 2,
         seed: 12345,
         tileSize: TILE_SIZE,
+        era: "napoleonic",
       });
 
       // Verify the result was generated successfully
@@ -336,6 +342,7 @@ describe("RandomMapGenerator", () => {
         maxPlayers: 2,
         seed: 12345,
         tileSize: TILE_SIZE,
+        era: "napoleonic",
       });
 
       // Verify the result was generated successfully
@@ -417,6 +424,7 @@ describe("RandomMapGenerator", () => {
         maxPlayers: 2,
         seed: 12345,
         tileSize: TILE_SIZE,
+        era: "napoleonic",
       });
 
       expect(result).toBeDefined();
