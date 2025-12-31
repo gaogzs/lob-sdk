@@ -60,8 +60,12 @@ export interface TeamDeploymentZone {
  */
 export interface GameMap {
   /** Width of the map in tiles. */
-  width: number;
+  tilesX: number;
   /** Height of the map in tiles. */
+  tilesY: number;
+  /** @deprecated Width of the map in pixels. Use tilesX instead. */
+  width: number;
+  /** @deprecated Height of the map in pixels. Use tilesY instead. */
   height: number;
   /** Optional deployment zones for each team. */
   deploymentZones?: TeamDeploymentZone[];

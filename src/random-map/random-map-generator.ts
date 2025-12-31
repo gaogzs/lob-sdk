@@ -85,6 +85,8 @@ export class RandomMapGenerator {
 
     return {
       map: {
+        tilesX,
+        tilesY,
         width: tilesX * tileSize,
         height: tilesY * tileSize,
         terrains,
