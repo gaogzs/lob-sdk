@@ -6,7 +6,14 @@ import {
 } from "@lob-sdk/types";
 import { GameEra, GameDataManager } from "@lob-sdk/game-data-manager";
 
-export const getMapSize = (size: Size, era: GameEra, tileSize: number): MapSize => {
+/**
+ * @returns Map Size in pixels
+ */
+export const getMapSize = (
+  size: Size,
+  era: GameEra,
+  tileSize: number
+): MapSize => {
   const mapSizes = GameDataManager.get(era).getMapSizes();
   return {
     width: mapSizes[size].map.tilesX * tileSize,
