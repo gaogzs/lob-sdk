@@ -1,25 +1,5 @@
-import {
-  TeamDeploymentZone,
-  MapSize,
-  DynamicBattleType,
-  Size,
-} from "@lob-sdk/types";
+import { TeamDeploymentZone, DynamicBattleType, Size } from "@lob-sdk/types";
 import { GameEra, GameDataManager } from "@lob-sdk/game-data-manager";
-
-/**
- * @returns Map Size in pixels
- */
-export const getMapSize = (
-  size: Size,
-  era: GameEra,
-  tileSize: number
-): MapSize => {
-  const mapSizes = GameDataManager.get(era).getMapSizes();
-  return {
-    width: mapSizes[size].map.tilesX * tileSize,
-    height: mapSizes[size].map.tilesY * tileSize,
-  };
-};
 
 export const getDeploymentZoneBySize = (
   size: Size,

@@ -25,23 +25,15 @@ export class ObjectiveLayerExecutor {
     private terrains: TerrainType[][],
     private heightMap: number[][],
     private objectives: ObjectiveDto<false>[],
-    private width: number,
-    private height: number
+    private tilesX: number,
+    private tilesY: number
   ) {
     this.random = randomSeeded(deriveSeed(seed, index + 1));
   }
 
   execute() {
-    const {
-      width,
-      height,
-      instruction,
-      terrains,
-      heightMap,
-      objectives,
-      tileSize,
-      random,
-    } = this;
+    const { instruction, terrains, heightMap, objectives, tileSize, random } =
+      this;
 
     const {
       player,
@@ -53,9 +45,6 @@ export class ObjectiveLayerExecutor {
 
     // Find all valid positions
     const validPositions: Array<{ x: number; y: number }> = [];
-
-    const tilesX = Math.floor(width / tileSize);
-    const tilesY = Math.floor(height / tileSize);
 
     // minDistance is in tile units, so we'll convert pixel distances to tile distances
     const minDistanceSquaredInTiles = minDistance * minDistance;
@@ -120,7 +109,7 @@ export class ObjectiveLayerExecutor {
             const ny = current.y + dy;
 
             // Check bounds
-            if (nx >= 0 && nx < tilesX && ny >= 0 && ny < tilesY) {
+            if (nx >= 0 && nx < this.tilesX && ny >= 0 && ny < this.tilesY) {
               const neighborKey = pack2D(nx, ny);
               if (!visited.has(neighborKey)) {
                 queue.push({ x: nx, y: ny, distance: current.distance + 1 });
@@ -133,16 +122,18 @@ export class ObjectiveLayerExecutor {
       return matchingCount >= minAmount;
     };
 
-
-    for (let x = 0; x < tilesX; x++) {
-      for (let y = 0; y < tilesY; y++) {
+    for (let x = 0; x < this.tilesX; x++) {
+      for (let y = 0; y < this.tilesY; y++) {
         // Check terrain filter constraint
         if (!checkTerrainFilter(x, y)) {
           continue;
         }
 
         // Check height constraint from terrain filter
-        if (terrainFilter?.heights !== undefined && terrainFilter.heights.length > 0) {
+        if (
+          terrainFilter?.heights !== undefined &&
+          terrainFilter.heights.length > 0
+        ) {
           const height = heightMap[x]?.[y] ?? 0;
           const heightValid = terrainFilter.heights.some(
             (range) => height >= range.min && height <= range.max
@@ -165,9 +156,10 @@ export class ObjectiveLayerExecutor {
             const dx = existingObjective.pos.x - positionX;
             const dy = existingObjective.pos.y - positionY;
             const distanceSquaredInPixels = dx * dx + dy * dy;
-            
+
             // Convert to tile units
-            const distanceSquaredInTiles = distanceSquaredInPixels / tileSizeSquared;
+            const distanceSquaredInTiles =
+              distanceSquaredInPixels / tileSizeSquared;
 
             if (distanceSquaredInTiles < minDistanceSquaredInTiles) {
               tooClose = true;

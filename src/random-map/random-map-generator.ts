@@ -1,8 +1,4 @@
-import {
-  getBattleSizeByMode,
-  getDeploymentZoneBySize,
-  getMapSize,
-} from "./map-size";
+import { getBattleSizeByMode, getDeploymentZoneBySize } from "./map-size";
 import {
   ObjectiveDto,
   TeamDeploymentZone,
@@ -23,6 +19,7 @@ import { ObjectiveExecutor } from "./executors/objective";
 import { ObjectiveLayerExecutor } from "./executors/objective-layer";
 import { LakeExecutor } from "./executors/lake";
 import { generateRandomSeed } from "@lob-sdk/seed";
+import { GameDataManager } from "@lob-sdk/game-data-manager";
 
 export class RandomMapGenerator {
   generate({
@@ -30,23 +27,32 @@ export class RandomMapGenerator {
     dynamicBattleType,
     maxPlayers,
     seed,
-    size,
     tileSize,
     era,
+    tilesX,
+    tilesY,
   }: GenerateRandomMapProps): GenerateRandomMapResult {
     const battleSize = getBattleSizeByMode(dynamicBattleType, maxPlayers);
-    const { width, height } = size ?? getMapSize(battleSize, era, tileSize);
+    const mapSizes = GameDataManager.get(era).getMapSizes();
+    const { map } = mapSizes[battleSize];
+
+    if (!tilesX) {
+      tilesX = map.tilesX;
+    }
+    if (!tilesY) {
+      tilesY = map.tilesY;
+    }
+
+    const widthPx = tilesX * tileSize;
+    const heightPx = tilesY * tileSize;
+
     const deploymentZones: [TeamDeploymentZone, TeamDeploymentZone] = [
-      getDeploymentZoneBySize(battleSize, width, height, 1, era, tileSize),
-      getDeploymentZoneBySize(battleSize, width, height, 2, era, tileSize),
+      getDeploymentZoneBySize(battleSize, widthPx, heightPx, 1, era, tileSize),
+      getDeploymentZoneBySize(battleSize, widthPx, heightPx, 2, era, tileSize),
     ];
     const objectives: ObjectiveDto<false>[] = [];
 
     const mapSeed = seed ?? generateRandomSeed();
-
-    // Ensure dimensions are positive integers
-    const tilesX = Math.max(1, Math.floor(width / tileSize));
-    const tilesY = Math.max(1, Math.floor(height / tileSize));
 
     const terrains: TerrainType[][] = [];
     const heightMap: number[][] = [];
@@ -78,8 +84,10 @@ export class RandomMapGenerator {
       terrains,
       heightMap,
       objectives,
-      width,
-      height,
+      widthPx,
+      heightPx,
+      tilesX,
+      tilesY,
       tileSize
     );
 
@@ -102,8 +110,10 @@ export class RandomMapGenerator {
     terrains: TerrainType[][],
     heightMap: number[][],
     objectives: ObjectiveDto<false>[],
-    width: number,
-    height: number,
+    widthPx: number,
+    heightPx: number,
+    tilesX: number,
+    tilesY: number,
     tileSize: number
   ) {
     scenario.instructions.forEach(
@@ -181,8 +191,8 @@ export class RandomMapGenerator {
               scenario,
               seed,
               index,
-              width,
-              height,
+              widthPx,
+              heightPx,
               objectives
             ).execute();
             break;
@@ -208,8 +218,8 @@ export class RandomMapGenerator {
               terrains,
               heightMap,
               objectives,
-              width,
-              height
+              tilesX,
+              tilesY
             ).execute();
             break;
           }

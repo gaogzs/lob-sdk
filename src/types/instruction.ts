@@ -2,7 +2,6 @@ import { Point2 } from "@lob-sdk/vector";
 import {
   TerrainType,
   GameMap,
-  MapSize,
   ProceduralScenario,
   DynamicBattleType,
   ObjectiveDto,
@@ -22,12 +21,12 @@ export interface GenerateRandomMapProps {
   maxPlayers: number;
   /** Optional seed for random number generation. If not provided, a random seed will be used. */
   seed?: number;
-  /** Optional map size. If not provided, default size will be used. */
-  size?: MapSize;
   /** Size of each tile in pixels/units. */
   tileSize: number;
   /** The game era (e.g., "napoleonic", "ww2"). */
   era: GameEra;
+  tilesX?: number;
+  tilesY?: number;
 }
 
 /**

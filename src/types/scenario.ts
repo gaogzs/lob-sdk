@@ -16,16 +16,6 @@ export type GameLocales = {
 };
 
 /**
- * Represents the size dimensions of a map.
- */
-export interface MapSize {
-  /** Width of the map in tiles. */
-  width: number;
-  /** Height of the map in tiles. */
-  height: number;
-}
-
-/**
  * Type of game scenario.
  */
 export enum GameScenarioType {

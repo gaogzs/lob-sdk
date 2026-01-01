@@ -152,38 +152,6 @@ describe("RandomMapGenerator", () => {
       });
     });
 
-    it("should generate scenarios with custom map sizes", () => {
-      const mapGenerator = new RandomMapGenerator();
-      const customSize = { width: 1000, height: 800 };
-
-      // Test a few random scenarios with custom size
-      const testScenarios = randomScenarioNames.slice(0, 3); // Test first 3 random scenarios
-
-      testScenarios.forEach((scenarioName) => {
-        const scenario = gameDataManager.getScenario(scenarioName);
-        const randomScenario = scenario as RandomScenario;
-
-        expect(() => {
-          const result = mapGenerator.generate({
-            scenario: randomScenario,
-            dynamicBattleType: DynamicBattleType.Combat,
-            maxPlayers: 2,
-            size: customSize,
-            tileSize: TILE_SIZE,
-            era: "napoleonic",
-          });
-
-          // Verify the custom size was used (adjusted to tile size multiples)
-          const expectedWidth =
-            Math.floor(customSize.width / TILE_SIZE) * TILE_SIZE;
-          const expectedHeight =
-            Math.floor(customSize.height / TILE_SIZE) * TILE_SIZE;
-          expect(result.map.width).toBe(expectedWidth);
-          expect(result.map.height).toBe(expectedHeight);
-        }).not.toThrow();
-      });
-    });
-
     it("should handle scenarios with different terrain configurations", () => {
       const mapGenerator = new RandomMapGenerator();
 
@@ -223,6 +191,58 @@ describe("RandomMapGenerator", () => {
             }
           }
         }).not.toThrow();
+      });
+    });
+
+    it("should generate maps with custom tilesX and tilesY dimensions", () => {
+      const mapGenerator = new RandomMapGenerator();
+      const testScenario = randomScenarioNames[0];
+      const scenario = gameDataManager.getScenario(testScenario);
+      const randomScenario = scenario as RandomScenario;
+
+      // Test with different custom dimensions
+      const customSizes = [
+        { tilesX: 50, tilesY: 50 },
+        { tilesX: 100, tilesY: 75 },
+        { tilesX: 75, tilesY: 100 },
+        { tilesX: 200, tilesY: 150 },
+      ];
+
+      customSizes.forEach(({ tilesX, tilesY }) => {
+        const result = mapGenerator.generate({
+          scenario: randomScenario,
+          dynamicBattleType: DynamicBattleType.Combat,
+          maxPlayers: 2,
+          seed: 12345,
+          tileSize: TILE_SIZE,
+          era: "napoleonic",
+          tilesX,
+          tilesY,
+        });
+
+        // Verify map dimensions match custom values
+        expect(result.map.width).toBe(tilesX * TILE_SIZE);
+        expect(result.map.height).toBe(tilesY * TILE_SIZE);
+
+        // Verify terrain and height arrays have correct dimensions
+        expect(result.map.terrains.length).toBe(tilesX);
+        expect(result.map.heightMap.length).toBe(tilesX);
+
+        if (tilesX > 0 && tilesY > 0) {
+          expect(result.map.terrains[0].length).toBe(tilesY);
+          expect(result.map.heightMap[0].length).toBe(tilesY);
+        }
+
+        // Verify all terrain and height values are properly initialized
+        for (let x = 0; x < tilesX; x++) {
+          expect(result.map.terrains[x].length).toBe(tilesY);
+          expect(result.map.heightMap[x].length).toBe(tilesY);
+          for (let y = 0; y < tilesY; y++) {
+            expect(result.map.terrains[x][y]).toBeDefined();
+            expect(result.map.terrains[x][y]).not.toBeNull();
+            expect(typeof result.map.heightMap[x][y]).toBe("number");
+          }
+        }
       });
     });
   });

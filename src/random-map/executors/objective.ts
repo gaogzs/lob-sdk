@@ -14,18 +14,23 @@ export class ObjectiveExecutor {
     private scenario: ProceduralScenario,
     private seed: number,
     private index: number,
-    private width: number,
-    private height: number,
+    private widthPx: number,
+    private heightPx: number,
     private objectives: ObjectiveDto<false>[]
   ) {
     this.random = randomSeeded(deriveSeed(seed, index + 1));
   }
 
   execute() {
-    const { width, height, objectives, random } = this;
+    const { widthPx, heightPx, objectives, random } = this;
     const { position, player } = this.instruction;
 
-    const [positionX, positionY] = getPosition(position, width, height, random);
+    const [positionX, positionY] = getPosition(
+      position,
+      widthPx,
+      heightPx,
+      random
+    );
 
     objectives.push({
       pos: { x: positionX, y: positionY },
