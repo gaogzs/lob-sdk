@@ -25,7 +25,9 @@ export interface GenerateRandomMapProps {
   tileSize: number;
   /** The game era (e.g., "napoleonic", "ww2"). */
   era: GameEra;
+  /* Optional number of tiles on the X axis. If not provided, the map size will be used. */
   tilesX?: number;
+  /* Optional number of tiles on the Y axis. If not provided, the map size will be used. */
   tilesY?: number;
 }
 
