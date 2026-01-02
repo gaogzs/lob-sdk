@@ -87,7 +87,8 @@
       "tutorial-control-groups",
       "tutorial-infantry-formations",
       "tutorial-unit-management",
-      "tutorial-charges"
+      "tutorial-charges",
+      "tutorial-hold-fire"
     ]
   }
 }

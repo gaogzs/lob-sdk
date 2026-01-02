@@ -79,6 +79,7 @@ import napoleonicTutorialControlGroups from "@lob-sdk/game-data/eras/napoleonic/
 import napoleonicTutorialInfantryFormations from "@lob-sdk/game-data/eras/napoleonic/scenarios/tutorial-infantry-formations.json";
 import napoleonicTutorialUnitManagement from "@lob-sdk/game-data/eras/napoleonic/scenarios/tutorial-unit-management.json";
 import napoleonicTutorialCharges from "@lob-sdk/game-data/eras/napoleonic/scenarios/tutorial-charges.json";
+import napoleonicTutorialHoldFire from "@lob-sdk/game-data/eras/napoleonic/scenarios/tutorial-hold-fire.json";
 
 import ww2BattleTypes from "@lob-sdk/game-data/eras/ww2/battle-types.json";
 import ww2Orders from "@lob-sdk/game-data/eras/ww2/orders.json";
@@ -293,6 +294,7 @@ export class GameDataManager {
           "tutorial-unit-management":
             napoleonicTutorialUnitManagement as GameScenario,
           "tutorial-charges": napoleonicTutorialCharges as GameScenario,
+          "tutorial-hold-fire": napoleonicTutorialHoldFire as GameScenario,
         };
 
         break;
