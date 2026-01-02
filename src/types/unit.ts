@@ -328,6 +328,25 @@ export interface FormationCheckPointWithProportion extends FormationCheckPoint {
   proportion: number;
 }
 
+/**
+ * Effect configuration for a formation.
+ * Effects are applied to the unit when it changes to this formation.
+ */
+export interface FormationEffect {
+  /**
+   * The name of the effect (e.g., "has_fired", "taken_fire").
+   */
+  name: string;
+  /**
+   * Duration in ticks. If not specified, uses a default duration for the effect type.
+   */
+  duration?: number;
+  /**
+   * Additional parameters for effects that require them (e.g., reorgDebuff for taken_fire).
+   */
+  [key: string]: string | number | undefined;
+}
+
 export interface FormationTemplate {
   id: string;
   frontBackArc: number;
@@ -441,6 +460,12 @@ export interface FormationTemplate {
    * Higher values mean projectiles pass through with less damage reduction.
    */
   projectilePassThrough?: number;
+
+  /**
+   * Effects that are applied to the unit when it changes to this formation.
+   * Effects are applied immediately when the formation change completes.
+   */
+  effects?: FormationEffect[];
 }
 
 export type UnitCounts = Record<UnitType, number>;
