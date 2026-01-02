@@ -6,4 +6,5 @@ export * from "./has-ran";
 export * from "./started-routing";
 export * from "./taken-fire";
 export * from "./has-fired";
+export * from "./can-pass-through-enemies";
 export * from "./unit-effect-factory";
