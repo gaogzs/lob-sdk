@@ -123,5 +123,10 @@
     "name": "railwayRoad",
     "id": 24,
     "category": "railwayRoad"
+  },
+  {
+    "name": "camp",
+    "id": 25,
+    "category": "land"
   }
 ]

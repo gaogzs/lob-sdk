@@ -26,6 +26,7 @@ export enum TerrainType {
   Redoubt = 22,
   Railway = 23,
   RailwayRoad = 24,
+  Camp = 25,
 }
 
 export enum TerrainCategoryType {
