@@ -46,7 +46,7 @@
       "cavalry-sabre": 0.1,
       "cavalry-lance": -0.05,
       "cavalry-sword": -0.1,
-      "musket": -0.8,
+      "musket": -1,
       "marksman-musket": -0.5,
       "rifle": -0.5,
       "8lb-cannon-ball": 0.05,
