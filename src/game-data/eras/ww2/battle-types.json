@@ -15,7 +15,8 @@
     "defaultArmy": {
       "1": 10,
       "2": 2
-    }
+    },
+    "logistics": 100
   },
   "combat": {
     "manpower": 6000,
@@ -33,7 +34,8 @@
     "defaultArmy": {
       "1": 18,
       "2": 4
-    }
+    },
+    "logistics": 200
   },
   "battle": {
     "manpower": 10000,
@@ -51,7 +53,8 @@
     "defaultArmy": {
       "1": 28,
       "2": 6
-    }
+    },
+    "logistics": 300
   },
   "grand_battle": {
     "manpower": 17500,
@@ -69,6 +72,7 @@
     "defaultArmy": {
       "1": 60,
       "2": 4
-    }
+    },
+    "logistics": 400
   }
 }

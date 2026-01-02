@@ -1,5 +1,33 @@
-import { AnyAction, RangedAttackAction, TurnSubmission, PlayerInfo, UserTier, GameScenarioType, GameLocales, GameClientEventDto, GameTrigger, ITriggerSystem, UnitDtoPartialId, UnitType, UnitDto, IUnit, UnitCounts, ObjectiveDto, IObjective, GameMap, TerrainType, FogOfWarResult, IServerFogOfWarService, IVpService, IOrderManager, IOrganizationSystem, IAttackSystem, IMovementSystem, Player,  } from "@lob-sdk/types"
-import { GameDataManager } from "@lob-sdk/game-data-manager"
+import {
+  AnyAction,
+  RangedAttackAction,
+  TurnSubmission,
+  PlayerInfo,
+  UserTier,
+  GameScenarioType,
+  GameLocales,
+  GameClientEventDto,
+  GameTrigger,
+  ITriggerSystem,
+  UnitDtoPartialId,
+  UnitType,
+  UnitDto,
+  IUnit,
+  UnitCounts,
+  ObjectiveDto,
+  IObjective,
+  GameMap,
+  TerrainType,
+  FogOfWarResult,
+  IServerFogOfWarService,
+  IVpService,
+  IOrderManager,
+  IOrganizationSystem,
+  IAttackSystem,
+  IMovementSystem,
+  Player,
+} from "@lob-sdk/types";
+import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 
@@ -74,6 +102,8 @@ export interface BattleTypeTemplate {
   ticksToCaptureBig: number;
   /** Default army composition for this battle type. */
   defaultArmy: UnitCounts;
+  /** If Supply Lines rule enabled, this will be the logistics per big objective. */
+  logistics?: number;
 }
 
 /**

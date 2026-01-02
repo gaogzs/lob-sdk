@@ -289,6 +289,8 @@ export interface IUnit {
 
   supply: number | null;
 
+  totalAllyOverlap: number;
+
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;
