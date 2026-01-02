@@ -32,4 +32,3 @@ export function getEloRangeByTime(
 
   return Math.min(score, MAX_ELO_RANGE);
 }
-
