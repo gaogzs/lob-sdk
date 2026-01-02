@@ -12,7 +12,7 @@ export abstract class BaseUnitEffect {
 
   /**
    * The string name for this effect, used for referencing in templates.
-   * Should be a kebab-case identifier (e.g., "has-fired", "been-in-melee").
+   * Should be a snake_case identifier (e.g., "has_fired", "been_in_melee").
    */
   static readonly name: string;
 

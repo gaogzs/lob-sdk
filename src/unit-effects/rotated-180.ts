@@ -7,7 +7,7 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
  */
 export class Rotated180 extends BaseUnitEffect {
   static readonly id = 1;
-  static readonly name = "rotated-180";
+  static readonly name = "rotated_180";
 }
 
 // Auto-register when module is loaded

@@ -8,7 +8,7 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
  */
 export class BeenInMelee extends BaseUnitEffect {
   static readonly id = 2;
-  static readonly name = "been-in-melee";
+  static readonly name = "been_in_melee";
   reorgDebuff: number;
 
   constructor(duration: number, reorgDebuff: number) {

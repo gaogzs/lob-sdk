@@ -7,7 +7,7 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
  */
 export class StartedRouting extends BaseUnitEffect {
   static readonly id = 4;
-  static readonly name = "started-routing";
+  static readonly name = "started_routing";
 
   merge(other: StartedRouting): void {
     if (other.duration > this.duration) {

@@ -29,7 +29,7 @@ export class UnitEffectRegistry {
     effectClass: UnitEffectConstructor & { id: number; name: string }
   ): void {
     const id = effectClass.id;
-    const effectName = effectClass.name; // The effect's string name (e.g., "has-fired")
+    const effectName = effectClass.name; // The effect's string name (e.g., "has_fired")
 
     // Check for duplicate ID
     if (this._idToName.has(id)) {

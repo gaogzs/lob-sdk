@@ -8,7 +8,7 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
  */
 export class TakenFire extends BaseUnitEffect {
   static readonly id = 5;
-  static readonly name = "taken-fire";
+  static readonly name = "taken_fire";
 
   reorgDebuff: number;
 

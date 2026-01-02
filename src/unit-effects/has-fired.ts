@@ -7,7 +7,7 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
  */
 export class HasFired extends BaseUnitEffect {
   static readonly id = 6;
-  static readonly name = "has-fired";
+  static readonly name = "has_fired";
 }
 
 // Auto-register when module is loaded
