@@ -10,14 +10,6 @@ import { EntityId } from "@lob-sdk/types";
  */
 export type UnitEffectDto = Array<number>;
 
-export enum UnitEffectId {
-  Rotated180 = 1,
-  BeenInMelee = 2,
-  HasRan = 3,
-  StartedRouting = 4,
-  TakenFire = 5,
-  HasFired = 6,
-}
 
 export interface UnitDto {
   id: EntityId;
