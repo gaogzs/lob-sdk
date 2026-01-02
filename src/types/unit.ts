@@ -10,7 +10,6 @@ import { EntityId } from "@lob-sdk/types";
  */
 export type UnitEffectDto = Array<number>;
 
-
 export interface UnitDto {
   id: EntityId;
   name?: string;
@@ -283,6 +282,21 @@ export interface IUnit {
 
   totalAllyOverlap: number;
 
+  /**
+   * The reorg debuff the unit will suffer in the current tick.
+   */
+  reorgDebuff: number;
+
+  /**
+   * If true, the unit cannot change formation in the current tick.
+   */
+  cannotChangeFormation: boolean;
+
+  /**
+   * If true, the unit cannot charge in the current tick.
+   */
+  cannotCharge: boolean;
+
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;
@@ -291,6 +305,8 @@ export interface IUnit {
    * Is the unit in melee combat?
    */
   inMelee: () => boolean;
+
+  deleteEffect: (effectId: number) => void;
 }
 
 /**

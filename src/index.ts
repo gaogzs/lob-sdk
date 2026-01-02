@@ -14,3 +14,4 @@ export * from "./random-map";
 export * from "./flat-coords-array";
 export * from "./simplex-noise";
 export * from "./data-structures";
+export * from "./unit-effects";
