@@ -225,7 +225,10 @@
       "rocket-long"
     ],
     "effects": [
-      ["can_pass_through_enemies", 4]
+      {
+        "name": "can_pass_through_enemies",
+        "duration": 4
+      }
     ]
   }
 ]

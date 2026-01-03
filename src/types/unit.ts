@@ -331,14 +331,21 @@ export interface FormationCheckPointWithProportion extends FormationCheckPoint {
 /**
  * Effect configuration for a formation.
  * Effects are applied to the unit when it changes to this formation.
- * Format: [name: string, duration?: number, ...args: number[]]
- * Example: ["taken_fire", 10, 0.5] // name, duration, reorgDebuff
  */
-export type FormationEffect = [
-  name: string,
-  duration?: number,
-  ...args: number[]
-];
+export interface FormationEffect {
+  /**
+   * The name of the effect (e.g., "has_fired", "taken_fire").
+   */
+  name: string;
+  /**
+   * Duration in ticks.
+   */
+  duration: number;
+  /**
+   * Additional parameters for effects that require them (e.g., reorgDebuff for taken_fire).
+   */
+  args?: number[];
+}
 
 export interface FormationTemplate {
   id: string;
