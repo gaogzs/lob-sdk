@@ -23,6 +23,8 @@ export class TakenFire extends BaseUnitEffect {
 
   onAdded(unit: IUnit): void {
     unit.reorgDebuff = Math.max(unit.reorgDebuff, this.reorgDebuff);
+    unit.movementModifier += TakenFire._movementModifier;
+    unit.baseMovementModifier += TakenFire._baseMovementModifier;
   }
 
   onTickStart(unit: IUnit): void {

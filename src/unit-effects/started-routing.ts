@@ -14,7 +14,7 @@ export class StartedRouting extends BaseUnitEffect {
   private static readonly _startedRoutingOrgRadiusModifier = -4;
 
   onTickStart(unit: IUnit): void {
-    unit.orgRadiusBonusModifier =
+    unit.orgRadiusBonusModifier +=
       StartedRouting._startedRoutingOrgRadiusModifier;
   }
 
