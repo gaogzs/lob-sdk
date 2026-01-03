@@ -307,29 +307,22 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ]
-    },
-    {
-      "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
       ],
+      "once": false
+    },
+    {
+      "event": "onTurnStart",
+      "conditions": [],
       "conditionLogic": "AND",
       "actions": [
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -344,41 +337,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "column_formation_done",
-            "value": 0,
-            "not": true
-          }
-        }
-      ],
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "column_formation_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "column_formation_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -388,7 +352,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -403,49 +367,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "line_formation_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "column_formation_done",
-            "value": 1
-          }
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "line_formation_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "line_formation_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -455,7 +382,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -470,49 +397,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "square_formation_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "line_formation_done",
-            "value": 1
-          }
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "square_formation_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "square_formation_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -522,7 +412,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -542,14 +432,7 @@
         {
           "type": "isVar",
           "value": {
-            "name": "square_formation_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -559,7 +442,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -581,8 +464,15 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
+      "event": "onTurnStart",
       "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_shown",
+            "value": 0
+          }
+        },
         {
           "type": "isVar",
           "value": {

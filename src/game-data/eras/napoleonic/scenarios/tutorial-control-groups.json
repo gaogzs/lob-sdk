@@ -474,64 +474,29 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
-      ]
-    },
-    {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit1"
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit2"
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit3"
-        }
       ],
-      "conditionLogic": "OR",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "mass_selection_done",
-            "value": 1
-          }
-        }
-      ]
+      "once": false
     },
     {
       "event": "onTurnStart",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 0
-          }
-        }
-      ],
-      "conditionLogic": "AND",
+      "conditions": [],
       "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "trigger_executed",
-            "value": 1
-          }
-        },
         {
           "type": "showMessage",
           "value": {
             "title": "trigger.1.title",
             "message": "trigger.1.message"
+          }
+        },
+        {
+          "type": "setVar",
+          "value": {
+            "name": "message_shown",
+            "value": 1
           }
         }
       ],
@@ -543,24 +508,16 @@
         {
           "type": "isVar",
           "value": {
-            "name": "mass_selection_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
       ],
-      "conditionLogic": "AND",
       "actions": [
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -575,53 +532,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "mass_selection_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "follow_order_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit1"
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "follow_order_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "follow_order_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -631,7 +547,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -646,53 +562,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "follow_order_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "move_many_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit1"
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "move_many_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "move_many_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -702,7 +577,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -717,53 +592,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "move_many_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "draw_path_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit1"
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "draw_path_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "draw_path_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -773,7 +607,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -788,53 +622,12 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
-      "conditions": [
-        {
-          "type": "isVar",
-          "value": {
-            "name": "draw_path_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "draw_line_done",
-            "value": 0,
-            "not": true
-          }
-        },
-        {
-          "type": "unitMovedThisTurn",
-          "value": "unit1"
-        }
-      ],
-      "conditionLogic": "AND",
-      "actions": [
-        {
-          "type": "setVar",
-          "value": {
-            "name": "draw_line_done",
-            "value": 1
-          }
-        }
-      ]
-    },
-    {
       "event": "onTurnStart",
       "conditions": [
         {
           "type": "isVar",
           "value": {
-            "name": "draw_line_done",
-            "value": 1
-          }
-        },
-        {
-          "type": "isVar",
-          "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 0
           }
         }
@@ -844,7 +637,7 @@
         {
           "type": "setVar",
           "value": {
-            "name": "trigger_executed",
+            "name": "message_shown",
             "value": 1
           }
         },
@@ -866,8 +659,15 @@
       "once": true
     },
     {
-      "event": "onTurnEnd",
+      "event": "onTurnStart",
       "conditions": [
+        {
+          "type": "isVar",
+          "value": {
+            "name": "message_shown",
+            "value": 0
+          }
+        },
         {
           "type": "isVar",
           "value": {
