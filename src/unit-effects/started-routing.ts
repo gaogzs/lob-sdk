@@ -1,4 +1,4 @@
-import { GameDataManager, IUnit } from "..";
+import { IUnit } from "..";
 import { BaseUnitEffect } from "./base-unit-effect";
 import { UnitEffectDisplayStat } from "./types";
 import { UnitEffectRegistry } from "./unit-effect-registry";
@@ -27,9 +27,11 @@ export class StartedRouting extends BaseUnitEffect {
   getDisplayStats(unit: IUnit): UnitEffectDisplayStat[] {
     return [
       {
-        label: "orgRadiusBonus",
+        label: "unitStat.orgRadiusBonus",
         type: "percentage",
         value: StartedRouting._startedRoutingOrgRadiusModifier,
+        color:
+          StartedRouting._startedRoutingOrgRadiusModifier < 0 ? "red" : "green",
       },
     ];
   }

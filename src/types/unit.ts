@@ -313,6 +313,12 @@ export interface IUnit {
   movementModifier: number;
 
   /**
+   * Base movement modifier for the unit in the current tick. This is the modifier that
+   * is applied before the clamping.
+   */
+  baseMovementModifier: number;
+
+  /**
    * If set, the unit's enemy collision level is set to this value for the current tick.
    */
   fixedEnemyCollisionLevel?: number;

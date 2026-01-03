@@ -12,6 +12,7 @@ export class TakenFire extends BaseUnitEffect {
   static readonly name = "taken_fire";
 
   private static readonly _movementModifier = -0.1;
+  private static readonly _baseMovementModifier = -0.12;
 
   reorgDebuff: number;
 
@@ -27,6 +28,7 @@ export class TakenFire extends BaseUnitEffect {
   onTickStart(unit: IUnit): void {
     unit.reorgDebuff = Math.max(unit.reorgDebuff, this.reorgDebuff);
     unit.movementModifier += TakenFire._movementModifier;
+    unit.baseMovementModifier += TakenFire._baseMovementModifier;
   }
 
   merge(other: TakenFire): void {
@@ -48,6 +50,12 @@ export class TakenFire extends BaseUnitEffect {
         type: "percentage",
         value: TakenFire._movementModifier,
         color: TakenFire._movementModifier < 0 ? "red" : "green",
+      },
+      {
+        label: "baseMovement",
+        type: "percentage",
+        value: TakenFire._baseMovementModifier,
+        color: TakenFire._baseMovementModifier < 0 ? "red" : "green",
       },
       {
         label: "reorgDebuff",
