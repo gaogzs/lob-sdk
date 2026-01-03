@@ -8,12 +8,7 @@
     "id": 2,
     "name": "run",
     "receivedOrgDamage": 0.15,
-    "orgRegainModifier": -0.35,
-    "chargeResistanceModifierByCategory": {
-      "infantry": -1.5,
-      "artillery": -0.75,
-      "militiaInfantry": -0.8
-    }
+    "orgRegainModifier": -0.35
   },
   {
     "id": 3,

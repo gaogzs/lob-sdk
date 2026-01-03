@@ -6,6 +6,9 @@ import { UnitEffectDisplayStat } from "./types";
 /**
  * Effect applied when a unit has been running.
  * Used to track recent running movement and affects various unit behaviors.
+ *
+ * @NOTE
+ * This effect is especial and integrated with the engine.
  */
 export class HasRan extends BaseUnitEffect {
   static readonly id = 3;
@@ -31,7 +34,7 @@ export class HasRan extends BaseUnitEffect {
         label: "unitStat.chargeResistance",
         type: "percentage",
         signed: true,
-        value: HasRan._chargeResistanceModifierByCategory[unit.category],
+        value: HasRan.getChargeResistanceModifier(unit),
       },
       {
         label: "removesX",
@@ -39,6 +42,10 @@ export class HasRan extends BaseUnitEffect {
         value: "unitEffect.beenInMelee",
       },
     ];
+  }
+
+  static getChargeResistanceModifier(unit: IUnit): number {
+    return HasRan._chargeResistanceModifierByCategory[unit.category];
   }
 }
 
