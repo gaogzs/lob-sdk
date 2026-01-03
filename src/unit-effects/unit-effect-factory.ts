@@ -1,7 +1,7 @@
 import { BaseUnitEffect } from "./base-unit-effect";
 import { Rotated180 } from "./rotated-180";
 import { BeenInMelee } from "./been-in-melee";
-import { HasRan, StartedRouting, TakenFire, HasFired, CanPassThroughEnemies } from "./index";
+import { HasRan, StartedRouting, TakenFire, CanPassThroughEnemies } from "./index";
 import { UnitEffectDto } from "@lob-sdk/types";
 import { UnitEffectRegistry } from "./unit-effect-registry";
 
@@ -24,7 +24,6 @@ export class UnitEffectFactory {
         [HasRan.id, (dto) => new HasRan(dto[1])],
         [StartedRouting.id, (dto) => new StartedRouting(dto[1])],
         [TakenFire.id, (dto) => new TakenFire(dto[1], dto[2])],
-        [HasFired.id, (dto) => new HasFired(dto[1])],
         [CanPassThroughEnemies.id, (dto) => new CanPassThroughEnemies(dto[1])],
       ]);
     }

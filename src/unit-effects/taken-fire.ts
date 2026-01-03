@@ -1,6 +1,7 @@
 import { IUnit, UnitEffectDto } from "@lob-sdk/types";
 import { BaseUnitEffect } from "./base-unit-effect";
 import { UnitEffectRegistry } from "./unit-effect-registry";
+import { UnitEffectDisplayStat } from "./types";
 
 /**
  * Effect applied when a unit has taken fire from enemies.
@@ -9,6 +10,8 @@ import { UnitEffectRegistry } from "./unit-effect-registry";
 export class TakenFire extends BaseUnitEffect {
   static readonly id = 5;
   static readonly name = "taken_fire";
+
+  private static readonly _movementModifier = -0.1;
 
   reorgDebuff: number;
 
@@ -23,6 +26,7 @@ export class TakenFire extends BaseUnitEffect {
 
   onTickStart(unit: IUnit): void {
     unit.reorgDebuff = Math.max(unit.reorgDebuff, this.reorgDebuff);
+    unit.movementModifier += TakenFire._movementModifier;
   }
 
   merge(other: TakenFire): void {
@@ -35,6 +39,28 @@ export class TakenFire extends BaseUnitEffect {
 
   toDto(): UnitEffectDto {
     return [this.id, this.duration, this.reorgDebuff];
+  }
+
+  getDisplayStats(unit: IUnit): UnitEffectDisplayStat[] {
+    return [
+      {
+        label: "movement",
+        type: "percentage",
+        value: TakenFire._movementModifier,
+      },
+      {
+        label: "reorgDebuff",
+        type: "percentage",
+        signed: true,
+        value: unit.reorgDebuff,
+        color: unit.reorgDebuff > 0 ? "red" : "green",
+      },
+      {
+        label: "removesX",
+        type: "text",
+        value: "unitEffect.hasRan",
+      },
+    ];
   }
 }
 

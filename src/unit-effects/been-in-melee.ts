@@ -1,6 +1,7 @@
 import { IUnit, UnitEffectDto } from "@lob-sdk/types";
 import { BaseUnitEffect } from "./base-unit-effect";
 import { UnitEffectRegistry } from "./unit-effect-registry";
+import { UnitEffectDisplayStat } from "./types";
 
 /**
  * Effect applied when a unit has been in melee combat.
@@ -38,6 +39,38 @@ export class BeenInMelee extends BaseUnitEffect {
 
   toDto(): UnitEffectDto {
     return [this.id, this.duration, this.reorgDebuff];
+  }
+
+  getDisplayStats(unit: IUnit): UnitEffectDisplayStat[] {
+    return [
+      {
+        label: "cannotChangeFormation",
+        type: "text",
+        color: "red",
+      },
+      {
+        label: "cannotCharge",
+        type: "text",
+        color: "red",
+      },
+      {
+        label: "cannotRecoverOrg",
+        type: "text",
+        color: "red",
+      },
+      {
+        label: "reorgDebuff",
+        value: unit.reorgDebuff,
+        type: "percentage",
+        signed: true,
+        color: unit.reorgDebuff > 0 ? "red" : "green",
+      },
+      {
+        label: "removesX",
+        type: "text",
+        value: "unitEffect.hasRan",
+      },
+    ];
   }
 }
 

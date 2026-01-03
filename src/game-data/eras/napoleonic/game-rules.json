@@ -70,7 +70,6 @@
     "nearbyUnitsNegativeOrgBonusCap": -56,
     "nearbyUnitsOrgDamageModifierCap": 0.5,
     "routingUnitNearbyUnitsOrgBonus": 6,
-    "startedRoutingOrgRadiusModifier": -4,
     "orgRadiusBonusHpLossReduction": 0.8,
     "safeOrgRecoveryModifier": 0.4,
     "safeDistance": 144,

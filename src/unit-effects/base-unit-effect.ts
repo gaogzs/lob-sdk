@@ -1,4 +1,5 @@
 import { IUnit, UnitEffectDto } from "@lob-sdk/types";
+import { UnitEffectDisplayStat } from "./types";
 
 /**
  * Base class for all unit effects.
@@ -80,5 +81,12 @@ export abstract class BaseUnitEffect {
    */
   toDto(): UnitEffectDto {
     return [this.id, this.duration];
+  }
+
+  /**
+   * Returns the display stats for this effect.
+   */
+  getDisplayStats(unit: IUnit): UnitEffectDisplayStat[] {
+    return [];
   }
 }

@@ -297,6 +297,26 @@ export interface IUnit {
    */
   cannotCharge: boolean;
 
+  /**
+   * Modifier that affects the unit charge resistance in the current tick.
+   */
+  chargeResistanceModifier: number;
+
+  /**
+   * Modifier that affects the unit org radius bonus in the current tick.
+   */
+  orgRadiusBonusModifier: number;
+
+  /**
+   * Modifier that affects the unit movement in the current tick.
+   */
+  movementModifier: number;
+
+  /**
+   * If set, the unit's enemy collision level is set to this value for the current tick.
+   */
+  fixedEnemyCollisionLevel?: number;
+
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;

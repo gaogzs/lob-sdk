@@ -184,7 +184,6 @@ export interface GameConstants {
 
   HAS_TAKEN_FIRE_SPEED_MODIFIER: number;
 
-  EFFECT_HAS_FIRED_TICKS: number;
   EFFECT_HAS_RAN_TICKS: number;
   EFFECT_STARTED_ROUTING_TICKS: number;
 
@@ -515,8 +514,6 @@ export interface OrganizationRule {
   nearbyUnitsOrgDamageModifierCap: number;
   /** Organization bonus multiplier for routing units within organization radius */
   routingUnitNearbyUnitsOrgBonus: number;
-  /** Organization radius modifier applied when unit has StartedRouting effect */
-  startedRoutingOrgRadiusModifier: number;
   /** HP loss reduction factor for organization radius bonus (0-1, where 1 = full reduction at 0% HP) */
   orgRadiusBonusHpLossReduction: number;
   /** Organization recovery modifier when unit is in a safe area (no nearby enemies) */
