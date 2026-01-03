@@ -317,6 +317,11 @@ export interface IUnit {
    */
   fixedEnemyCollisionLevel?: number;
 
+  /**
+   * Modifier that affects the unit melee stamina cost in the current tick.
+   */
+  meleeStaminaCostModifier: number;
+
   getMaxRange: () => number;
   isRouting: () => boolean;
   isRoutingOrRecovering: () => boolean;

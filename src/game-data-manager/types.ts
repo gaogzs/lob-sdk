@@ -375,7 +375,6 @@ export interface FlankingRule {
 export interface StaminaRule {
   meleeTurnCost: number;
   rangedTurnCost: number;
-  hasRanMeleeStaminaCostModifier: number;
   regainRates: {
     range1: number;
     range2: number;

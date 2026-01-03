@@ -1,5 +1,10 @@
 import { IUnit, UnitEffectDto } from "@lob-sdk/types";
 import { UnitEffectDisplayStat } from "./types";
+import {
+  DamageTypeName,
+  DamageTypeTemplate,
+  RangedDamageTypeTemplate,
+} from "@lob-sdk/game-data-manager";
 
 /**
  * Base class for all unit effects.
@@ -88,5 +93,21 @@ export abstract class BaseUnitEffect {
    */
   getDisplayStats(unit: IUnit): UnitEffectDisplayStat[] {
     return [];
+  }
+
+  /**
+   * Checks if a specific ranged damage type is blocked by this effect.
+   * This method is called for each ranged damage type available to the unit during damage type selection.
+   * Override this method to specify which ranged damage types cannot be used while this effect is active.
+   * 
+   * @param unit - The unit this effect is applied to
+   * @param template - The ranged damage type template to check (already loaded, no need to fetch)
+   * @returns true if this ranged damage type should be blocked, false otherwise
+   */
+  isRangedDamageTypeBlocked(
+    unit: IUnit,
+    template: RangedDamageTypeTemplate
+  ): boolean {
+    return false;
   }
 }
