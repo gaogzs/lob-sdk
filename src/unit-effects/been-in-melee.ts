@@ -65,11 +65,6 @@ export class BeenInMelee extends BaseUnitEffect {
         signed: true,
         color: unit.reorgDebuff > 0 ? "red" : "green",
       },
-      {
-        label: "removesX",
-        type: "text",
-        value: "unitEffect.hasRan",
-      },
     ];
   }
 }

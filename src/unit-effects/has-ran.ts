@@ -36,11 +36,6 @@ export class HasRan extends BaseUnitEffect {
         signed: true,
         value: HasRan.getChargeResistanceModifier(unit),
       },
-      {
-        label: "removesX",
-        type: "text",
-        value: "unitEffect.beenInMelee",
-      },
     ];
   }
 

@@ -31,3 +31,4 @@ export class CanPassThroughEnemies extends BaseUnitEffect {
 
 // Auto-register when module is loaded
 UnitEffectRegistry.register(CanPassThroughEnemies);
+

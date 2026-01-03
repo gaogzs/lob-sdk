@@ -55,11 +55,6 @@ export class TakenFire extends BaseUnitEffect {
         value: unit.reorgDebuff,
         color: unit.reorgDebuff > 0 ? "red" : "green",
       },
-      {
-        label: "removesX",
-        type: "text",
-        value: "unitEffect.hasRan",
-      },
     ];
   }
 }
