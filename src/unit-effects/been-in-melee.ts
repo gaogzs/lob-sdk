@@ -54,11 +54,6 @@ export class BeenInMelee extends BaseUnitEffect {
         color: "red",
       },
       {
-        label: "cannotRecoverOrg",
-        type: "text",
-        color: "red",
-      },
-      {
         label: "reorgDebuff",
         value: unit.reorgDebuff,
         type: "percentage",

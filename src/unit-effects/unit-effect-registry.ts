@@ -1,15 +1,19 @@
 import { BaseUnitEffect } from "./base-unit-effect";
+import { UnitEffectDto } from "@lob-sdk/types";
 
 /**
  * Type for unit effect constructors that must accept duration as first parameter
  * and may accept additional parameters of any type.
- * 
- * Note: We use `any[]` for rest parameters because different effect classes
+ *
+ * Note: We use `args[]` for rest parameters because different effect classes
  * have different constructor signatures that cannot be known at compile time.
- * The first parameter (duration) is still type-safe, and the factory ensures
+ * The first parameter (duration) is still type-safe, and the registry ensures
  * correct instantiation at runtime.
  */
-type UnitEffectConstructor = new (duration: number, ...rest: any[]) => BaseUnitEffect;
+type UnitEffectConstructor = new (
+  duration: number,
+  ...args: number[]
+) => BaseUnitEffect;
 
 /**
  * Registry that maps effect IDs to their string names and vice versa.
@@ -36,7 +40,7 @@ export class UnitEffectRegistry {
       const existingEffectName = this._idToName.get(id)!;
       throw new Error(
         `Cannot register effect with ID ${id} and name "${effectName}": ` +
-        `Effect ID ${id} is already registered to name "${existingEffectName}"`
+          `Effect ID ${id} is already registered to name "${existingEffectName}"`
       );
     }
 
@@ -45,7 +49,7 @@ export class UnitEffectRegistry {
       const existingId = this._nameToId.get(effectName)!;
       throw new Error(
         `Cannot register effect with ID ${id} and name "${effectName}": ` +
-        `Effect name "${effectName}" is already registered to ID ${existingId}`
+          `Effect name "${effectName}" is already registered to ID ${existingId}`
       );
     }
 
@@ -77,9 +81,7 @@ export class UnitEffectRegistry {
    * @param id - The numeric effect ID
    * @returns The effect class, or undefined if not found
    */
-  static getEffectClass(
-    id: number
-  ): UnitEffectConstructor | undefined {
+  static getEffectClass(id: number): UnitEffectConstructor | undefined {
     return this._idToClass.get(id);
   }
 
@@ -127,5 +129,21 @@ export class UnitEffectRegistry {
   static getAllIds(): number[] {
     return Array.from(this._idToName.keys());
   }
-}
 
+  /**
+   * Creates a unit effect instance from a DTO.
+   * @param dto - The effect DTO containing [id, duration, ...args]
+   * @returns A new instance of the effect
+   * @throws Error if the effect ID is not registered
+   */
+  static create(dto: UnitEffectDto): BaseUnitEffect {
+    const [effectId, ...args] = dto;
+    const effectClass = this.getEffectClass(effectId);
+
+    if (!effectClass) {
+      throw new Error(`Unknown unit effect: ${effectId}`);
+    }
+
+    return Reflect.construct(effectClass, args);
+  }
+}

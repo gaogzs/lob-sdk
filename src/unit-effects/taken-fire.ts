@@ -47,6 +47,7 @@ export class TakenFire extends BaseUnitEffect {
         label: "movement",
         type: "percentage",
         value: TakenFire._movementModifier,
+        color: TakenFire._movementModifier < 0 ? "red" : "green",
       },
       {
         label: "reorgDebuff",
