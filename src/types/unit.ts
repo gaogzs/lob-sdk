@@ -10,15 +10,6 @@ import { EntityId } from "@lob-sdk/types";
  */
 export type UnitEffectDto = Array<number>;
 
-export enum UnitEffectId {
-  Rotated180 = 1,
-  BeenInMelee = 2,
-  HasRan = 3,
-  StartedRouting = 4,
-  TakenFire = 5,
-  HasFired = 6,
-}
-
 export interface UnitDto {
   id: EntityId;
   name?: string;
@@ -270,37 +261,6 @@ export interface RangeUnitTemplate extends BaseUnitTemplate {
 export type UnitTemplate = Readonly<BaseUnitTemplate | RangeUnitTemplate>;
 export type UnitTemplates = Record<UnitType, UnitTemplate>;
 
-export interface IUnit {
-  id: EntityId;
-  type: UnitType;
-  category: UnitCategoryId;
-  player: number;
-  team: number;
-  org: number;
-  template: UnitTemplate;
-  position: Vector2;
-  currentFormation: string;
-  pendingFormationId: string | null;
-  /**
-   * Remaining ticks for formation change. Formation changes cannot last more
-   * than 1 turn.
-   */
-  formationChangeTicksRemaining: number;
-
-  supply: number | null;
-
-  totalAllyOverlap: number;
-
-  getMaxRange: () => number;
-  isRouting: () => boolean;
-  isRoutingOrRecovering: () => boolean;
-  isMoving: () => boolean;
-  /**
-   * Is the unit in melee combat?
-   */
-  inMelee: () => boolean;
-}
-
 /**
  * Points used to check what terrain the unit is on.
  * Each point has an offset relative to the formation center and a weight
@@ -433,6 +393,15 @@ export interface FormationTemplate {
    * Higher values mean projectiles pass through with less damage reduction.
    */
   projectilePassThrough?: number;
+
+  /**
+   * Effects applied when a unit switches to this formation.
+   */
+  effects?: Array<{
+    name: string;
+    duration: number;
+    args?: number[];
+  }>;
 }
 
 export type UnitCounts = Record<UnitType, number>;
