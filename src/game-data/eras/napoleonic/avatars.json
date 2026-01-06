@@ -422,5 +422,12 @@
     "name": "andrew-jackson",
     "tier": 1,
     "premiumPrice": 100
+  },
+
+  {
+    "id": 63,
+    "name": "catoleon",
+    "tier": 3,
+    "premiumPrice": 1250
   }
 ]
