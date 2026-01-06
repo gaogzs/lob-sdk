@@ -13,12 +13,10 @@ import {
   UnitType,
   UnitCounts,
   ObjectiveDto,
-  IObjective,
   GameMap,
   TerrainType,
   FogOfWarResult,
   IServerFogOfWarService,
-  IVpService,
   IOrderManager,
   IOrganizationSystem,
   IAttackSystem,
@@ -30,6 +28,8 @@ import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { BaseUnit } from "@lob-sdk/unit";
+import { BaseVpService } from "@lob-sdk/vp-service";
+import { BaseObjective } from "@lob-sdk/objective";
 
 /**
  * A unique identifier for game entities (units, objectives, etc.).
@@ -100,6 +100,10 @@ export interface BattleTypeTemplate {
   ticksToCaptureSmall: number;
   /** Number of ticks required to capture big objectives. */
   ticksToCaptureBig: number;
+  /** Victory points per big objective. */
+  bigVps: number;
+  /** Victory points per small objective. */
+  smallVps: number;
   /** Default army composition for this battle type. */
   defaultArmy: UnitCounts;
   /** If Supply Lines rule enabled, this will be the logistics per big objective. */
@@ -418,7 +422,7 @@ export interface IServerGame {
   /** Set of pending melee attack data */
   pendingMeleeAttacks: Set<PendingMeleeAttackData>;
   /** Victory points service for tracking VP */
-  vpService: IVpService;
+  vpService: BaseVpService;
   /** Manager for handling unit orders */
   orderManager: IOrderManager;
   /** System for managing unit organization */
@@ -464,24 +468,24 @@ export interface IServerGame {
    * @param objectiveDtos - Array of objective data transfer objects
    * @returns Array of created Objective instances
    */
-  createObjectives(objectiveDtos: ObjectiveDto<false>[]): IObjective[];
+  createObjectives(objectiveDtos: ObjectiveDto<false>[]): BaseObjective[];
   /**
    * Gets all objectives in the game
    * @returns Array of all objectives
    */
-  getObjectives(): IObjective[];
+  getObjectives(): BaseObjective[];
   /**
    * Gets an objective by its ID
    * @param objectiveId - The objective ID
    * @returns The objective, or undefined if not found
    */
-  getObjective(objectiveId: number): IObjective | undefined;
+  getObjective(objectiveId: number): BaseObjective | undefined;
   /**
    * Gets an objective by its name
    * @param name - The objective name
    * @returns The objective, or undefined if not found
    */
-  getObjectiveByName(name: string): IObjective | undefined;
+  getObjectiveByName(name: string): BaseObjective | undefined;
 
   /**
    * Checks if the game has reached maximum player capacity
@@ -565,7 +569,7 @@ export interface IServerGame {
    * Adds one or more objectives to the game
    * @param objectives - Objectives to add
    */
-  addObjective(...objectives: IObjective[]): void;
+  addObjective(...objectives: BaseObjective[]): void;
   /**
    * Gets the current game state
    * @returns The current game state
@@ -829,12 +833,6 @@ export interface IServerGame {
    */
   hasBigObjectives(team: number): boolean;
   /**
-   * Checks if a team should lose for having no big objectives
-   * @param team - The team number
-   * @returns True if the team should lose
-   */
-  shouldTeamLoseForNoBigObjectives(team: number): boolean;
-  /**
    * Gets the closest objective to a position matching a condition
    * @param position - The position to measure from
    * @param condition - Function to filter objectives
@@ -842,22 +840,28 @@ export interface IServerGame {
    */
   getClosestObjective(
     position: Vector2,
-    condition: (objective: IObjective) => boolean
-  ): IObjective | null;
+    condition: (objective: BaseObjective) => boolean
+  ): BaseObjective | null;
   /**
    * Gets the closest enemy objective to a position
    * @param position - The position to measure from
    * @param team - The team number (enemy of this team)
    * @returns The closest enemy objective, or null if none found
    */
-  getClosestEnemyObjective(position: Vector2, team: number): IObjective | null;
+  getClosestEnemyObjective(
+    position: Vector2,
+    team: number
+  ): BaseObjective | null;
   /**
    * Gets the closest ally objective to a position
    * @param position - The position to measure from
    * @param team - The team number (ally of this team)
    * @returns The closest ally objective, or null if none found
    */
-  getClosestAllyObjective(position: Vector2, team: number): IObjective | null;
+  getClosestAllyObjective(
+    position: Vector2,
+    team: number
+  ): BaseObjective | null;
 
   /**
    * Calculates fog of war visibility for a team
@@ -901,7 +905,7 @@ export interface IServerGame {
    * @param entityId - The entity ID
    * @returns The entity (unit or objective), or undefined if not found
    */
-  getEntity(entityId: EntityId): BaseUnit | IObjective | undefined;
+  getEntity(entityId: EntityId): BaseUnit | BaseObjective | undefined;
   /**
    * Gets the army composition for a player
    * @param playerNumber - The player number

@@ -1,22 +1,9 @@
-import { Point2, Vector2 } from "@lob-sdk/vector";
+import { Point2 } from "@lob-sdk/vector";
 import { EntityId } from "@lob-sdk/types";
 
 export enum ObjectiveType {
   Small = 1,
   Big = 2,
-}
-
-export interface IObjective {
-  id: EntityId;
-  position: Vector2;
-  player: number;
-  team: number;
-  type: ObjectiveType;
-  logistics?: number;
-  manpowerPerTurn?: number;
-  goldPerTurn?: number;
-  manpower?: number; // Accumulated manpower resources
-  gold?: number; // Accumulated gold resources
 }
 
 export interface ObjectiveDtoBase {
@@ -27,10 +14,16 @@ export interface ObjectiveDtoBase {
   captureProgress?: number;
   type?: ObjectiveType;
   lo?: number;
-  mp?: number; // manpowerPerTurn
-  gp?: number; // goldPerTurn
-  m?: number; // manpower (accumulated)
-  g?: number; // gold (accumulated)
+  /** Manpower generated per turn */
+  mp?: number;
+  /** Gold generated per turn */
+  gp?: number;
+  /** Accumulated manpower resources */
+  m?: number;
+  /** Accumulated gold resources */
+  g?: number;
+  /** Victory points */
+  vp?: number;
 }
 
 export type ObjectiveDto<T extends boolean = true> = T extends true

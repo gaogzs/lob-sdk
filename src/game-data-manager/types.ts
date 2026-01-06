@@ -252,9 +252,58 @@ export interface GameConstants {
    * ===== Victory points =====
    * ================================
    */
-  VP_TOTAL_OBJECTIVE_POINTS: number;
+
+  /**
+   * Starting victory points for each team at the beginning of the game.
+   * Both teams start with this base amount, and then additional points are added or subtracted
+   * based on objectives captured, loss ratios, and other factors.
+   */
   VP_BASE_POINTS: number;
+
+  /**
+   * Maximum victory points that can be awarded based on loss ratio comparison.
+   * The proportion of casualties (power lost) between teams is compared.
+   * The team with fewer casualties receives positive points, while the team with more casualties receives negative points.
+   * Points are distributed proportionally based on the difference in loss ratios, up to this maximum value.
+   *
+   * Example: If this is 10, and Team 1 lost 20% while Team 2 lost 40%, the difference is 20% (0.2),
+   * so Team 1 gets +2 points and Team 2 gets -2 points. The maximum of 10 would only be reached if
+   * one team lost 0% and the other lost 100% (difference of 1.0).
+   */
+  VP_LOSS_RATIO_POINTS: number;
+
+  /**
+   * Margin of victory points used to determine the winner when the max turn limit is reached.
+   * A team is defeated if their VP difference (their points minus opponent's points) plus this value <= 0.
+   * A team can be behind by up to this many points and still avoid defeat; otherwise they lose and the game ends.
+   *
+   * Example: If this is 10, Team 1 with 45 points vs Team 2 with 50 points: -5 + 10 = 5 > 0, so it's a tie.
+   * But if Team 1 had 40 points: -10 + 10 = 0 <= 0, so Team 1 is defeated.
+   */
   VP_POINTS_TO_TIE_BREAK: number;
+
+  /**
+   * Default victory points awarded for capturing a big objective.
+   * Used when an objective doesn't have custom victory points explicitly set.
+   * Big objectives are typically more strategically important than small objectives.
+   */
+  VP_BIG_DEFAULT_POINTS: number;
+
+  /**
+   * Default victory points awarded for capturing a small objective.
+   * Used when an objective doesn't have custom victory points explicitly set.
+   * Small objectives typically award fewer points than big objectives.
+   */
+  VP_SMALL_DEFAULT_POINTS: number;
+
+  /**
+   * Base value for calculating victory points penalty from ticks under pressure.
+   * The penalty is calculated as: -(ticksUnderPressure * (VP_TICKS_UNDER_PRESSURE_BASE / TICKS_PER_TURN))
+   * This represents the base VP penalty per tick. When divided by TICKS_PER_TURN, it gives the VP penalty per turn.
+   *
+   * Example: If this is 0.5 and TICKS_PER_TURN is 16, the penalty is 0.5/16 = 0.03125 VP per tick, or 0.5 VP per turn.
+   */
+  VP_TICKS_UNDER_PRESSURE_BASE: number;
 
   PRESET_SCENARIO_ELO_K_FACTOR: number;
   /** Multiplier for ELO K factor in cancelled ranked games (e.g., 0.5 = 50% of normal K factor) */
@@ -444,7 +493,10 @@ export interface EntrenchmentRule {
 export interface ObjectivesRule {
   /** Capture radius around objectives (in world units) */
   radius: number;
-  /** Minimum pressure threshold (0-1) required to start capturing an objective */
+  /** Minimum pressure threshold (0-1). If the team has less than this
+   * proportion of the non-neutral objective victory points, the team
+   * will start being under pressure.
+   */
   pressureThreshold: number;
 }
 
@@ -530,10 +582,10 @@ export interface OrganizationRule {
   routingOrgRecoveryModifier: number;
   /** Maximum organization recovery modifier based on HP proportion (negative value reduces recovery at low HP) */
   maxOrgRecoveryByHpModifier: number;
-  /** Victory points threshold above which no organization modifier is applied */
-  victoryPointsThreshold: number;
+  /** Max VP ratio difference below which no organization modifier is applied */
+  vpRatioDebuffThreshold: number;
   /** Multiplier for victory points-based organization modifier calculation */
-  vpsModifierMultiplier: number;
+  vpModifierMultiplier: number;
 }
 
 export interface GameRules {

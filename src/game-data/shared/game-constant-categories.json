@@ -113,9 +113,10 @@
   "FOW_LEVEL_3_DISTANCE": "fogOfWar",
   "FOW_LEVEL_4_DISTANCE": "fogOfWar",
 
-  "VP_TOTAL_OBJECTIVE_POINTS": "victoryPoints",
   "VP_BASE_POINTS": "victoryPoints",
+  "VP_LOSS_RATIO_POINTS": "victoryPoints",
   "VP_POINTS_TO_TIE_BREAK": "victoryPoints",
+  "VP_TICKS_UNDER_PRESSURE_BASE": "victoryPoints",
 
   "DEFAULT_AMMO_RESERVE": "ammunition",
 
