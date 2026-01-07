@@ -78,8 +78,8 @@
     "distantThreatDistance": 72,
     "routingOrgRecoveryModifier": -0.25,
     "maxOrgRecoveryByHpModifier": -0.95,
-    "vpRatioDebuffThreshold": 0.2,
-    "vpModifierMultiplier": 2.0
+    "vpDebuffGraceZone": 0.2,
+    "vpDebuffMultiplier": 2.0
   },
   "tutorial": {
     "scenarios": [
