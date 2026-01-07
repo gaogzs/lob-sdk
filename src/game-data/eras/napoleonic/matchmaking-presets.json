@@ -1,7 +1,7 @@
 {
   "presets": [
     {
-      "id": "ranked_clash_1v1_1m",
+      "id": "ranked_clash_1v1_1m_napoleonic",
       "image": "clash",
       "turnTimeLimits": ["1m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -10,7 +10,7 @@
       "isRanked": true
     },
     {
-      "id": "ranked_clash_1v1_2m",
+      "id": "ranked_clash_1v1_2m_napoleonic",
       "image": "clash",
       "turnTimeLimits": ["2m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -19,448 +19,448 @@
       "isRanked": true
     },
     {
-      "id": "ranked_clash_2v2_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_clash_2v2_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_combat_1v1_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_combat_1v1_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_combat_2v2_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_combat_2v2_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_battle_1v1_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_battle_1v1_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_battle_2v2_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_battle_2v2_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_grandBattle_1v1_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_grandBattle_1v1_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_grandBattle_2v2_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_grandBattle_2v2_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_clash_1v1_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_clash_1v1_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_clash_2v2_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_clash_2v2_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_combat_1v1_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_combat_1v1_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_combat_2v2_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_combat_2v2_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_battle_1v1_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_battle_1v1_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_battle_2v2_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_battle_2v2_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_grandBattle_1v1_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_grandBattle_1v1_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_grandBattle_2v2_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "ranked_classic_grandBattle_2v2_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": true
-    },
-    {
-      "id": "unranked_clash_1v1_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_clash_1v1_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_clash_2v2_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_clash_2v2_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_combat_1v1_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_combat_1v1_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_combat_2v2_2m",
-      "image": "combat",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_combat_2v2_3m",
-      "image": "combat",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["combat"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_battle_1v1_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_battle_1v1_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_battle_2v2_3m",
-      "image": "battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_battle_2v2_5m",
-      "image": "battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_grandBattle_1v1_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_grandBattle_1v1_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_grandBattle_2v2_3m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["3m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_grandBattle_2v2_5m",
-      "image": "grand_battle",
-      "turnTimeLimits": ["5m"],
-      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
-      "dynamicBattleTypes": ["grand_battle"],
-      "teamSizes": ["2v2"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_regular_clash_1v1_1m",
-      "image": "clash",
-      "turnTimeLimits": ["1m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_regular_clash_1v1_2m",
-      "image": "clash",
-      "turnTimeLimits": ["2m"],
-      "scenarios": ["plains", "hills", "tundra"],
-      "dynamicBattleTypes": ["clash"],
-      "teamSizes": ["1v1"],
-      "isRanked": false
-    },
-    {
-      "id": "unranked_regular_clash_2v2_1m",
+      "id": "ranked_clash_2v2_1m_napoleonic",
       "image": "clash",
       "turnTimeLimits": ["1m"],
       "scenarios": ["plains", "hills", "tundra"],
       "dynamicBattleTypes": ["clash"],
       "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_clash_2v2_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_combat_1v1_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_combat_1v1_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_combat_2v2_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_combat_2v2_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_battle_1v1_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_battle_1v1_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_battle_2v2_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_battle_2v2_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_grandBattle_1v1_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_grandBattle_1v1_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_grandBattle_2v2_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_grandBattle_2v2_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_clash_1v1_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_clash_1v1_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_clash_2v2_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_clash_2v2_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_combat_1v1_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_combat_1v1_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_combat_2v2_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_combat_2v2_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_battle_1v1_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_battle_1v1_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_battle_2v2_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_battle_2v2_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_grandBattle_1v1_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_grandBattle_1v1_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_grandBattle_2v2_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "ranked_classic_grandBattle_2v2_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": true
+    },
+    {
+      "id": "unranked_clash_1v1_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
       "isRanked": false
     },
     {
-      "id": "unranked_regular_clash_2v2_2m",
+      "id": "unranked_clash_1v1_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_clash_2v2_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_clash_2v2_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_combat_1v1_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_combat_1v1_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_combat_2v2_2m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_combat_2v2_3m_napoleonic",
+      "image": "combat",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["combat"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_battle_1v1_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_battle_1v1_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_battle_2v2_3m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_battle_2v2_5m_napoleonic",
+      "image": "battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_grandBattle_1v1_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_grandBattle_1v1_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_grandBattle_2v2_3m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["3m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_grandBattle_2v2_5m_napoleonic",
+      "image": "grand_battle",
+      "turnTimeLimits": ["5m"],
+      "scenarios": ["classic-plains", "classic-hills", "classic-tundra"],
+      "dynamicBattleTypes": ["grand_battle"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_regular_clash_1v1_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_regular_clash_1v1_2m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["2m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["1v1"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_regular_clash_2v2_1m_napoleonic",
+      "image": "clash",
+      "turnTimeLimits": ["1m"],
+      "scenarios": ["plains", "hills", "tundra"],
+      "dynamicBattleTypes": ["clash"],
+      "teamSizes": ["2v2"],
+      "isRanked": false
+    },
+    {
+      "id": "unranked_regular_clash_2v2_2m_napoleonic",
       "image": "clash",
       "turnTimeLimits": ["2m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -469,7 +469,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_combat_1v1_2m",
+      "id": "unranked_regular_combat_1v1_2m_napoleonic",
       "image": "combat",
       "turnTimeLimits": ["2m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -478,7 +478,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_combat_1v1_3m",
+      "id": "unranked_regular_combat_1v1_3m_napoleonic",
       "image": "combat",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -487,7 +487,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_combat_2v2_2m",
+      "id": "unranked_regular_combat_2v2_2m_napoleonic",
       "image": "combat",
       "turnTimeLimits": ["2m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -496,7 +496,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_combat_2v2_3m",
+      "id": "unranked_regular_combat_2v2_3m_napoleonic",
       "image": "combat",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -505,7 +505,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_battle_1v1_3m",
+      "id": "unranked_regular_battle_1v1_3m_napoleonic",
       "image": "battle",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -514,7 +514,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_battle_1v1_5m",
+      "id": "unranked_regular_battle_1v1_5m_napoleonic",
       "image": "battle",
       "turnTimeLimits": ["5m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -523,7 +523,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_battle_2v2_3m",
+      "id": "unranked_regular_battle_2v2_3m_napoleonic",
       "image": "battle",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -532,7 +532,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_battle_2v2_5m",
+      "id": "unranked_regular_battle_2v2_5m_napoleonic",
       "image": "battle",
       "turnTimeLimits": ["5m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -541,7 +541,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_grandBattle_1v1_3m",
+      "id": "unranked_regular_grandBattle_1v1_3m_napoleonic",
       "image": "grand_battle",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -550,7 +550,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_grandBattle_1v1_5m",
+      "id": "unranked_regular_grandBattle_1v1_5m_napoleonic",
       "image": "grand_battle",
       "turnTimeLimits": ["5m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -559,7 +559,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_grandBattle_2v2_3m",
+      "id": "unranked_regular_grandBattle_2v2_3m_napoleonic",
       "image": "grand_battle",
       "turnTimeLimits": ["3m"],
       "scenarios": ["plains", "hills", "tundra"],
@@ -568,7 +568,7 @@
       "isRanked": false
     },
     {
-      "id": "unranked_regular_grandBattle_2v2_5m",
+      "id": "unranked_regular_grandBattle_2v2_5m_napoleonic",
       "image": "grand_battle",
       "turnTimeLimits": ["5m"],
       "scenarios": ["plains", "hills", "tundra"],

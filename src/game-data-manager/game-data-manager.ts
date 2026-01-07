@@ -24,6 +24,7 @@ import {
   ObjectiveSkin,
   Avatar,
   MapSizeTemplate,
+  MatchmakingPresetsData,
 } from "./types";
 
 // Import all era-specific data synchronously
@@ -41,6 +42,7 @@ import napoleonicUnitSkinsData from "@lob-sdk/game-data/eras/napoleonic/unit-ski
 import napoleonicGameRules from "@lob-sdk/game-data/eras/napoleonic/game-rules.json";
 import napoleonicFormations from "@lob-sdk/game-data/eras/napoleonic/formations.json";
 import napoleonicMapSizes from "@lob-sdk/game-data/eras/napoleonic/map-sizes.json";
+import napoleonicMatchmakingPresets from "@lob-sdk/game-data/eras/napoleonic/matchmaking-presets.json";
 
 // Import napoleonic scenarios
 import napoleonicWaterloo from "@lob-sdk/game-data/eras/napoleonic/scenarios/waterloo.json";
@@ -95,6 +97,7 @@ import ww2UnitSkins from "@lob-sdk/game-data/eras/ww2/unit-skins.json";
 import ww2GameRules from "@lob-sdk/game-data/eras/ww2/game-rules.json";
 import ww2Formations from "@lob-sdk/game-data/eras/ww2/formations.json";
 import ww2MapSizes from "@lob-sdk/game-data/eras/ww2/map-sizes.json";
+import ww2MatchmakingPresets from "@lob-sdk/game-data/eras/ww2/matchmaking-presets.json";
 
 // Import ww2 scenarios
 import ww2BattleOfMoscow from "@lob-sdk/game-data/eras/ww2/scenarios/battle-of-moscow.json";
@@ -176,6 +179,9 @@ export class GameDataManager {
   // Map sizes
   private mapSizes: Record<Size, MapSizeTemplate> | null = null;
 
+  // Matchmaking presets
+  private matchmakingPresets: MatchmakingPresetsData | null = null;
+
   private _unitCategoryAllowedOrders: Map<UnitCategoryId, Set<OrderType>> =
     new Map();
 
@@ -253,6 +259,8 @@ export class GameDataManager {
           napoleonicFormations as FormationTemplate[]
         );
         this.mapSizes = napoleonicMapSizes as Record<Size, MapSizeTemplate>;
+        this.matchmakingPresets =
+          napoleonicMatchmakingPresets as MatchmakingPresetsData;
         this.scenarios = {
           plains: napoleonicPlains as GameScenario,
           hills: napoleonicHills as GameScenario,
@@ -319,6 +327,8 @@ export class GameDataManager {
         this.gameRules = ww2GameRules as GameRules;
         this._formationManager.load(ww2Formations as FormationTemplate[]);
         this.mapSizes = ww2MapSizes as Record<Size, MapSizeTemplate>;
+        this.matchmakingPresets =
+          ww2MatchmakingPresets as MatchmakingPresetsData;
         this.scenarios = {
           fields: ww2Fields as GameScenario,
           "battle-of-france": ww2France as GameScenario,
@@ -1097,6 +1107,14 @@ export class GameDataManager {
   getAllDynamicBattleTypes = (): DynamicBattleType[] => {
     return Object.keys(this.battleTypes);
   };
+
+  /**
+   * Gets all matchmaking presets for the current era.
+   * @returns An array of matchmaking preset objects.
+   */
+  public getMatchmakingPresets(): MatchmakingPresetsData {
+    return this.matchmakingPresets!;
+  }
 
   getBot() {}
 }
