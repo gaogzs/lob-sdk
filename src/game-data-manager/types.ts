@@ -1,7 +1,9 @@
 import {
   DynamicBattleType,
+  GameTurnTimeLimit,
   ScenarioName,
   SkinTier,
+  TeamSize,
   UnitCategoryId,
   UnitType,
 } from "@lob-sdk/types";
@@ -633,22 +635,6 @@ export interface UnitSkin {
 export interface MapSizeTemplate {
   map: { tilesX: number; tilesY: number };
   deployment: { tilesX: number; tilesY: number; zoneSeparation: number };
-}
-
-export enum GameTurnTimeLimit {
-  ThirtySeconds = "30s",
-  OneMinute = "1m",
-  TwoMinutes = "2m",
-  ThreeMinutes = "3m",
-  FiveMinutes = "5m",
-  OneDay = "1d",
-  ThreeDays = "3d",
-  SevenDays = "7d",
-}
-
-export enum TeamSize {
-  OneVsOne = "1v1",
-  TwoVsTwo = "2v2",
 }
 
 export interface MatchmakingPreset {
