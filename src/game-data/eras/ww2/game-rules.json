@@ -22,6 +22,17 @@
     "meleeDefenseBonusPerLevel": 1,
     "pushStrengthModifierPerLevel": 0.15
   },
+  "allyCollision": {
+    "collisionBounceScale": 0.02,
+    "overlapStopCharge": 0.0,
+    "maxSpeedPenalty": 0.0,
+    "maxOrgDamageReceived": 0.0,
+    "maxMeleeAttackPenalty": 0.0,
+    "maxRangedAttackPenalty": 0.0,
+    "upperModifierLimit": 1.0,
+    "lowerModifierLimit": 0.0,
+    "maxOrgRadiusModifier": 0.0
+  },
   "objectives": {
     "radius": 24,
     "pressureThreshold": 0.4
