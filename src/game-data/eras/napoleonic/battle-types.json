@@ -1,24 +1,25 @@
 {
   "micro": {
-    "manpower": 1475,
-    "gold": 625,
-    "ammoReserve": 900,
+    "manpower": 1600,
+    "gold": 700,
+    "ammoReserve": 800,
     "goldToAmmoRate": 18,
-    "skirmisherRatio": [1, 4],
+    "skirmisherRatio": [1, 2],
     "fogOfWar": true,
     "unitCaps": {
       "17": 4,
       "19": 1
     },
-    "eloKFactor": 12,
-    "ticksToCaptureSmall": 64,
-    "ticksToCaptureBig": 448,
+    "eloKFactor": 8,
+    "ticksToCaptureSmall": 16,
+    "ticksToCaptureBig": 400,
     "bigVps": 60,
     "smallVps": 10,
     "defaultArmy": {
-      "1": 6,
+      "1": 4,
+      "14": 2,
       "2": 2,
-      "3": 1
+      "12": 1
     },
     "mapSize": ["s"]
   },
