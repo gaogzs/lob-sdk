@@ -546,20 +546,6 @@ export interface OrganizationRule {
   maxOrgMeleeAttackPenalty: number;
   /** Base organization regain rate per turn (as proportion of max org) */
   regainRate: number;
-  /**
-   * Organization proportion threshold (0-1) at which units shatter. When unit.org <= maxOrg * shatterOrgThreshold, unit shatters
-   * Shattering is when the unit is disorganized enough to be destroyed permanently.
-   */
-  shatterOrgThreshold: number;
-  /** Organization proportion threshold (0-1) at which units enter Routed state. When unit.org <= maxOrg * routedOrgThreshold, unit enters Routed state */
-  routedOrgThreshold: number;
-  /** Organization proportion threshold (0-1) at which units enter Recovering state. When unit.org >= maxOrg * recoverOrgThreshold, unit enters Recovering state */
-  recoverOrgThreshold: number;
-  /**
-   * Organization proportion threshold (0-1) at which units rally. When unit.org >= maxOrg * rallyOrgThreshold, unit rallies
-   * Rallying is when the unit is organized enough to be able to receive orders again.
-   */
-  rallyOrgThreshold: number;
   /** Upper limit for organization-based modifiers (as proportion, e.g., 0.9 = 90%) */
   upperModifierLimit: number;
   /** Lower limit for organization-based modifiers (as proportion, e.g., 0.4 = 40%) */

@@ -120,6 +120,23 @@ export abstract class BaseUnit extends Entity {
    */
   abstract reorgDebuff: number;
 
+  /**
+   * Absolute organization value at which this unit shatters.
+   */
+  abstract shattersAtOrg: number;
+  /**
+   * Absolute organization value at which this unit routes.
+   */
+  abstract routesAtOrg: number;
+  /**
+   * Absolute organization value at which this unit recovers from routing.
+   */
+  abstract recoversAtOrg: number;
+  /**
+   * Absolute organization value at which this unit rallies.
+   */
+  abstract ralliesAtOrg: number;
+
   constructor(id: EntityId, era: GameEra, name?: string) {
     super(id, name);
 

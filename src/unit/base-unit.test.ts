@@ -86,6 +86,11 @@ describe("BaseUnit", () => {
     hasAttacked = false;
     reorgDebuff = 0;
 
+    shattersAtOrg: number = 0;
+    routesAtOrg: number = 0;
+    recoversAtOrg: number = 0;
+    ralliesAtOrg: number = 0;
+
     isRoutingOrRecovering() {
       return false;
     }

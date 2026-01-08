@@ -146,6 +146,22 @@ interface BaseUnitTemplate {
   startsRunning?: boolean;
   hp: number;
   org: number;
+  /**
+   * Absolute organization value at which this unit shatters.
+   */
+  shattersAtOrg: number;
+  /**
+   * Absolute organization value at which this unit routes.
+   */
+  routesAtOrg: number;
+  /**
+   * Absolute organization value at which this unit recovers from routing.
+   */
+  recoversAtOrg: number;
+  /**
+   * Absolute organization value at which this unit rallies.
+   */
+  ralliesAtOrg: number;
   stamina?: number;
   supply?: number;
   /**
