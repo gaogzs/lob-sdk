@@ -24,7 +24,7 @@
     "mapSize": ["s"]
   },
   "clash": {
-    "manpower": 3350,
+    "manpower": 3450,
     "gold": 1450,
     "ammoReserve": 900,
     "goldToAmmoRate": 15,
